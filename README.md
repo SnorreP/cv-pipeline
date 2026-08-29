@@ -114,19 +114,30 @@ open the notebook under **Workspace -> Repos** and hit **Run all**.
 
 1. Power BI Desktop -> **Get data -> Azure Databricks**.
 2. Paste `powerbi_server_hostname` and `powerbi_http_path` from the
-   Terraform outputs. Choose **Import**, and sign in with **Microsoft
-   Entra ID** using the same account you use for Azure.
+   Terraform outputs, and choose **Import**.
+3. Sign in with a **Personal Access Token** (the Microsoft Entra ID option
+   only accepts work/school accounts -- with a personal Microsoft account
+   it fails with "you can't use a personal account here"). Generate the
+   token in the workspace: avatar (top right) -> **Settings** ->
+   **Developer** -> **Access tokens** -> **Generate new token**, scope
+   **BI Tools**. Copy it immediately (shown once) and paste it into the
+   Personal Access Token option in Power BI. Tokens die with the
+   workspace: after every `terraform destroy` + re-apply, generate a
+   fresh one. If Power BI remembers a failed sign-in and won't ask again:
+   *File -> Options and settings -> Data source settings -> Clear
+   permissions*.
 
    The cluster must be running for this step -- run the job first, or start
    the cluster from the Compute page.
-3. Tick the tables in the `cv` schema and load.
-4. Build the report. In *File -> Options -> Preview features*, enable
+4. Tick the tables in the `cv` schema and load.
+5. Build the report. In *File -> Options -> Preview features*, enable
    **Power BI Project (.pbip) save option**, then save the report into
    `powerbi/` and commit -- `.pbip` projects are plain text and diff
    properly in git, unlike `.pbix`.
-5. Publish to the Power BI Service, then *File -> Embed report ->
+6. Publish to the Power BI Service, then *File -> Embed report ->
    Publish to web* for the public link. (Publish to web must be enabled by
-   the tenant admin -- check this early.)
+   the tenant admin -- check this early. The Service also requires a
+   work/school account -- a personal Microsoft account cannot publish.)
 
 ## Tear down
 
@@ -149,5 +160,7 @@ with it.
    connection in Power BI Desktop (*Transform data -> Data source settings*)
    with the new `powerbi_server_hostname` and `powerbi_http_path` from
    `terraform output` -- a rebuilt workspace gets a new hostname and HTTP
-   path. Then **Refresh**, republish, and `.\deploy.cmd terraform destroy`
-   again. About 30 minutes end to end.
+   path -- and generate a fresh Personal Access Token in the new workspace
+   (the old token died with the old one; see "Build and publish the
+   report"). Then **Refresh**, republish, and
+   `.\deploy.cmd terraform destroy` again. About 30 minutes end to end.

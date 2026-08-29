@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 385,
+            "y": 19
+          },
+          "nodeIndex": "cv_summary",
+          "nodeLineageTag": "97018d91-fb31-4995-8cf2-4a9a4619e0c2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 717,
+            "y": 382
+          },
+          "nodeIndex": "education",
+          "nodeLineageTag": "450d71d5-52b3-4745-a455-59972bbe92e8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1001,
+            "y": 13
+          },
+          "nodeIndex": "experience",
+          "nodeLineageTag": "bab9f28d-ad2c-4359-bed8-dbf5dd9a885f",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 335,
+            "y": 378
+          },
+          "nodeIndex": "project_technologies",
+          "nodeLineageTag": "96db8423-2335-45ab-b56c-60cc0425431d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 23
+          },
+          "nodeIndex": "projects",
+          "nodeLineageTag": "1d8d2040-15cf-40d5-b990-ce65e93e9a18",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1219,
+            "y": 407
+          },
+          "nodeIndex": "skills",
+          "nodeLineageTag": "583063c9-f4fd-44ef-b867-714129d5cf6c",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

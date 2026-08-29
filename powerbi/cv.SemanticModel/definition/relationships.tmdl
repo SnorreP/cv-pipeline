@@ -1,0 +1,24 @@
+relationship b5d4a9e9-b268-41e3-be00-7a79e4f0aaa5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: education.start_date
+	toColumn: LocalDateTable_0e98d178-ed5b-45fe-ab4f-ad1e4c78726a.Date
+
+relationship e9a26552-ccee-4581-95b7-ab3b81493a23
+	joinOnDateBehavior: datePartOnly
+	fromColumn: education.end_date
+	toColumn: LocalDateTable_acfb83d6-8ab2-4daf-9d5e-f956cae55b02.Date
+
+relationship 24b4ede0-b9d3-4c55-8e92-d4e9f9f562f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: experience.start_date
+	toColumn: LocalDateTable_0284016d-249a-4cf2-82ed-d34a3afb14db.Date
+
+relationship 118dd0c8-ef0e-453f-95dd-5931ea73b5b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: experience.end_date
+	toColumn: LocalDateTable_2fccfa77-4f07-4121-887b-faf520895119.Date
+
+relationship AutoDetected_cdd0ba1e-3541-4837-a9a3-c93dfb720459
+	fromColumn: project_technologies.project
+	toColumn: projects.project
+

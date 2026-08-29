@@ -1,0 +1,49 @@
+table skills
+	lineageTag: 583063c9-f4fd-44ef-b867-714129d5cf6c
+
+	column skill
+		dataType: string
+		lineageTag: d87a8538-1c64-48aa-9399-09e9179a2d08
+		summarizeBy: none
+		sourceColumn: skill
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: bd180b89-857d-47a3-a9ad-96025f4d94b4
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column proficiency
+		dataType: int64
+		formatString: 0
+		lineageTag: d2dadd12-0109-493d-9060-19443ba033df
+		summarizeBy: sum
+		sourceColumn: proficiency
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_experience
+		dataType: double
+		lineageTag: 8e8c0357-b32d-4677-afe0-6f143e4ca60c
+		summarizeBy: sum
+		sourceColumn: years_experience
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition skills = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    skills_Table = cv_Schema{[Name="skills",Kind="Table"]}[Data]
+				in
+				    skills_Table
+

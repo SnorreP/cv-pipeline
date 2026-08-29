@@ -1,0 +1,30 @@
+table project_technologies
+	lineageTag: 96db8423-2335-45ab-b56c-60cc0425431d
+
+	column project
+		dataType: string
+		lineageTag: 7a5a6251-0333-4222-9e30-b65570e7f6e8
+		summarizeBy: none
+		sourceColumn: project
+
+		annotation SummarizationSetBy = Automatic
+
+	column technology
+		dataType: string
+		lineageTag: f39b0624-d2fc-4183-8058-62c9512502d8
+		summarizeBy: none
+		sourceColumn: technology
+
+		annotation SummarizationSetBy = Automatic
+
+	partition project_technologies = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    project_technologies_Table = cv_Schema{[Name="project_technologies",Kind="Table"]}[Data]
+				in
+				    project_technologies_Table
+

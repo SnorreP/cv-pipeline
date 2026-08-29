@@ -1,0 +1,41 @@
+table cv_summary
+	isHidden
+	lineageTag: 97018d91-fb31-4995-8cf2-4a9a4619e0c2
+
+	column metric
+		dataType: string
+		isHidden
+		lineageTag: a13c2247-2d5f-41df-9ef3-716209e9feaa
+		summarizeBy: none
+		sourceColumn: metric
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column value
+		dataType: double
+		isHidden
+		lineageTag: e16138ee-5cb5-48b7-94b7-330f8dda8870
+		summarizeBy: sum
+		sourceColumn: value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition cv_summary = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    cv_summary_Table = cv_Schema{[Name="cv_summary",Kind="Table"]}[Data]
+				in
+				    cv_summary_Table
+
+	changedProperty = IsHidden
+

@@ -1,0 +1,70 @@
+table education
+	lineageTag: 450d71d5-52b3-4745-a455-59972bbe92e8
+
+	column institution
+		dataType: string
+		lineageTag: 0944fedb-ad81-4a8c-86e0-3860c2540d30
+		summarizeBy: none
+		sourceColumn: institution
+
+		annotation SummarizationSetBy = Automatic
+
+	column degree
+		dataType: string
+		lineageTag: 1496c8df-22fd-4f2a-abfd-9d6d1050f257
+		summarizeBy: none
+		sourceColumn: degree
+
+		annotation SummarizationSetBy = Automatic
+
+	column field
+		dataType: string
+		lineageTag: ff60a800-7092-4cda-8221-c9547283ea7d
+		summarizeBy: none
+		sourceColumn: field
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b1b89784-d915-43ff-9c8b-cbcd043f166f
+		summarizeBy: none
+		sourceColumn: start_date
+
+		variation Variation
+			isDefault
+			relationship: b5d4a9e9-b268-41e3-be00-7a79e4f0aaa5
+			defaultHierarchy: LocalDateTable_0e98d178-ed5b-45fe-ab4f-ad1e4c78726a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 80e253c8-4be3-47a4-80c1-21d5e2d2cb53
+		summarizeBy: none
+		sourceColumn: end_date
+
+		variation Variation
+			isDefault
+			relationship: e9a26552-ccee-4581-95b7-ab3b81493a23
+			defaultHierarchy: LocalDateTable_acfb83d6-8ab2-4daf-9d5e-f956cae55b02.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition education = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    education_Table = cv_Schema{[Name="education",Kind="Table"]}[Data]
+				in
+				    education_Table
+

@@ -1,0 +1,106 @@
+table experience
+	lineageTag: bab9f28d-ad2c-4359-bed8-dbf5dd9a885f
+
+	column company
+		dataType: string
+		lineageTag: 8d6c1f5c-b6a3-4602-befa-96b81f798f92
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: c59ba70e-4c12-4df6-a418-4802081ce9c1
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column location
+		dataType: string
+		lineageTag: f276af9f-366d-47ef-bac8-b5b8811fbd1d
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 74e43de1-2af7-435a-91ba-f563255fd0be
+		summarizeBy: none
+		sourceColumn: start_date
+
+		variation Variation
+			isDefault
+			relationship: 24b4ede0-b9d3-4c55-8e92-d4e9f9f562f4
+			defaultHierarchy: LocalDateTable_0284016d-249a-4cf2-82ed-d34a3afb14db.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4e31b4a1-af11-4899-bff7-5145b97b4cc0
+		summarizeBy: none
+		sourceColumn: end_date
+
+		variation Variation
+			isDefault
+			relationship: 118dd0c8-ef0e-453f-95dd-5931ea73b5b0
+			defaultHierarchy: LocalDateTable_2fccfa77-4f07-4121-887b-faf520895119.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column summary
+		dataType: string
+		lineageTag: 7fabe1ee-8938-442f-bf13-d97afdb31d0b
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2cf14d08-d2ff-4883-b39c-6c9ce0d2a173
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_months
+		dataType: int64
+		formatString: 0
+		lineageTag: 604400b0-e464-4cf8-b690-879bb1117d83
+		summarizeBy: sum
+		sourceColumn: duration_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration_years
+		dataType: double
+		lineageTag: 4f9b5ccf-f22c-4103-8881-d7fe796fb959
+		summarizeBy: sum
+		sourceColumn: duration_years
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition experience = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    experience_Table = cv_Schema{[Name="experience",Kind="Table"]}[Data]
+				in
+				    experience_Table
+

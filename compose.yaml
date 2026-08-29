@@ -1,0 +1,34 @@
+# One service: an interactive deploy shell with terraform + az + git.
+# Use it via .\deploy.cmd (or: docker compose run --rm --build tools).
+#
+# All mount wiring lives here so nobody ever types a -v flag or a
+# Windows path into docker by hand.
+
+name: cv-pipeline # pins volume names even if the folder is ever renamed
+
+services:
+  tools:
+    build: .
+    image: cv-pipeline-tools
+    platform: linux/amd64
+    volumes:
+      # The repo itself. terraform.tfvars, terraform.tfstate and the
+      # lock file stay on your machine exactly as before -- nothing
+      # irreplaceable ever lives inside a container or volume.
+      - .:/workspace
+      # az login survives across runs. Deliberately NOT the Windows
+      # %USERPROFILE%\.azure -- that cache is DPAPI-encrypted and
+      # unreadable from Linux.
+      - azure-config:/root/.azure
+      # .terraform (provider binaries, symlinks) stays off the slow
+      # Windows bind mount, and any stale Windows-terraform leftovers
+      # underneath are masked.
+      - tf-scratch:/workspace/terraform/.terraform
+      # Provider download cache -- init is fast after the first time.
+      - tf-cache:/tf-cache
+    working_dir: /workspace/terraform
+
+volumes:
+  azure-config:
+  tf-scratch:
+  tf-cache:

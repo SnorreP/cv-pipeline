@@ -6,7 +6,8 @@
 #   - databricks creates things INSIDE that workspace (cluster, git folder, job)
 #
 # Both authenticate through your Azure CLI session, so the only setup you
-# need is `az login` before running terraform. No tokens or secrets.
+# need is `az login` before running terraform (from the deploy container:
+# `az login --use-device-code`). No tokens or secrets.
 # ---------------------------------------------------------------------------
 
 terraform {

@@ -1,0 +1,5 @@
+# The image contains tools only; the repo is bind-mounted at runtime.
+# Ignore everything so the build context is empty and terraform state,
+# terraform.tfvars and .git can never end up inside an image layer --
+# even if a COPY is carelessly added later.
+*

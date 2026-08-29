@@ -1,0 +1,6 @@
+# This repo is checked out on Windows (core.autocrlf=true), but some files
+# are consumed by Linux (the container) or by cmd.exe, where line endings
+# are load-bearing. Pin them so a checkout can never corrupt them.
+*.cmd      text eol=crlf
+Dockerfile text eol=lf
+*.sh       text eol=lf

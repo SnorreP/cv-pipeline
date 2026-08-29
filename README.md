@@ -32,32 +32,76 @@ building or refreshing the report.
 | `data/` | The CV itself, as CSVs. This is the only thing to edit when the CV changes. |
 | `databricks/01_transform_cv.py` | Notebook that turns the CSVs into Delta tables. |
 | `terraform/` | Defines the workspace, cluster, Git folder and refresh job. |
-| `powerbi/` | The report, saved as a Power BI Project (`.pbip`) in Phase 3. |
+| `powerbi/` | The report, saved as a Power BI Project (`.pbip`) in the "Build and publish the report" step. |
+| `Dockerfile`, `compose.yaml`, `deploy.cmd` | The containerized deploy toolchain (pinned Terraform + Azure CLI). |
 
 ## Prerequisites
 
 - An Azure subscription (the free trial works; everything here fits well
   inside the $200 credit)
-- [Terraform](https://developer.hashicorp.com/terraform/install) >= 1.5,
-  [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli), git
+- [Rancher Desktop](https://rancherdesktop.io/) (or Docker Desktop) with the
+  **dockerd (moby)** container engine -- the deploy toolchain runs in a
+  container, so Terraform and the Azure CLI need no local install.
+  (No Docker? Installing [Terraform](https://developer.hashicorp.com/terraform/install)
+  >= 1.5 and the [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+  locally works too.)
+- git
 - Power BI Desktop, plus a work/school account for publishing
+
+## The deploy container
+
+Everything Azure-facing runs inside a small container image (pinned
+Terraform + Azure CLI + git), so the pipeline deploys identically on any
+machine. With Rancher Desktop running:
+
+```
+.\deploy.cmd
+```
+
+The first run builds the image (a few minutes; instant afterwards) and
+drops you into a shell already in `terraform/`, with `terraform`, `az` and
+`git` on PATH. You can also run single commands: `.\deploy.cmd terraform plan`.
+
+How it fits together:
+
+- The repo is mounted into the container at `/workspace`, so
+  `terraform.tfvars`, `terraform.tfstate` and `.terraform.lock.hcl` live on
+  your machine exactly as before. Nothing irreplaceable is inside the
+  container -- you can stop using it at any time.
+- Your Azure login and the downloaded providers persist in named Docker
+  volumes (`cv-pipeline_azure-config`, `cv-pipeline_tf-scratch`,
+  `cv-pipeline_tf-cache`), so you sign in once and `terraform init` is
+  fast after the first time. `docker volume rm cv-pipeline_azure-config`
+  signs you out; removing the other two just means re-downloading.
+  Avoid `docker compose down -v`, which removes all three.
+- Inside the container, sign in with `az login --use-device-code` (a
+  container has no browser -- open the printed URL on your machine and
+  enter the code). The login survives across runs for weeks.
+- Tool versions are pinned in the `Dockerfile` and that is the only place
+  they live. Bump a pin, run `.\deploy.cmd`, and the image rebuilds itself.
+- A `No services to build` warning at startup is a harmless Docker Compose
+  quirk -- the build and the command still run.
+- After the first `terraform init`, commit `terraform/.terraform.lock.hcl`
+  -- it pins the exact provider builds for every machine. If you ever want
+  to run terraform directly on Windows again, extend it first with
+  `terraform providers lock -platform=linux_amd64 -platform=windows_amd64`.
 
 ## Deploy the environment
 
 1. Push this repo to GitHub as a **public** repo *before* running Terraform.
    The workspace clones it during `apply`, so it must exist first.
-2. `az login`
-3. ```
-   cd terraform
-   cp terraform.tfvars.example terraform.tfvars
+2. Copy `terraform/terraform.tfvars.example` to `terraform/terraform.tfvars`
+   and fill in your subscription ID and repo URL.
+3. `.\deploy.cmd` -- you land in a shell in `terraform/`. In it:
    ```
-   then fill in your subscription ID and repo URL in `terraform.tfvars`.
-4. ```
+   az login --use-device-code
    terraform init
    terraform apply
    ```
-   Workspace creation is the slow part -- expect 5-10 minutes.
-5. `terraform output` shows the workspace URL and the two values Power BI
+   Workspace creation is the slow part -- expect 5-10 minutes. The first
+   `init` writes `terraform/.terraform.lock.hcl` on your machine -- commit
+   it (see "The deploy container").
+4. `terraform output` shows the workspace URL and the two values Power BI
    will need (`powerbi_server_hostname` and `powerbi_http_path`).
 
 ## Run the pipeline
@@ -87,7 +131,7 @@ open the notebook under **Workspace -> Repos** and hit **Run all**.
 ## Tear down
 
 ```
-terraform destroy
+.\deploy.cmd terraform destroy
 ```
 
 The published report keeps working -- Import mode means the data travels
@@ -96,8 +140,14 @@ with it.
 ## Updating the CV later
 
 1. Edit the CSVs, commit, push.
-2. `terraform apply` to recreate the workspace (if destroyed).
+2. `.\deploy.cmd terraform apply` to recreate the workspace (if destroyed).
+   If the Azure login has expired, run `.\deploy.cmd`, sign in again with
+   `az login --use-device-code`, then `terraform apply`.
 3. In the workspace, open the Git folder and **pull** so the checkout picks
    up the new commit (the clone does not update itself).
-4. Run **refresh-cv-tables**, then **Refresh** in Power BI Desktop,
-   republish, and destroy again. About 30 minutes end to end.
+4. Run **refresh-cv-tables**. If the workspace was recreated, update the
+   connection in Power BI Desktop (*Transform data -> Data source settings*)
+   with the new `powerbi_server_hostname` and `powerbi_http_path` from
+   `terraform output` -- a rebuilt workspace gets a new hostname and HTTP
+   path. Then **Refresh**, republish, and `.\deploy.cmd terraform destroy`
+   again. About 30 minutes end to end.

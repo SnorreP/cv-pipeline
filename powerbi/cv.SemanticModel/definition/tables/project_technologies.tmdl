@@ -17,6 +17,9 @@ table project_technologies
 
 		annotation SummarizationSetBy = Automatic
 
+	measure 'Tech Used' = IF ( COUNTROWS ( project_technologies ) > 0, "●" )
+		lineageTag: c7a39bf4-8c87-40d0-a2ab-2359ee72bbcf
+
 	partition project_technologies = m
 		mode: import
 		source =

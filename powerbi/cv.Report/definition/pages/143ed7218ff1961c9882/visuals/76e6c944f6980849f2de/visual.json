@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "76e6c944f6980849f2de",
+  "position": { "x": 660, "y": 560, "z": 25, "height": 100, "width": 580 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "It's version-controlled and reproducible — a git repo, not a Word file.",
+                    "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#0B0B0B" }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The self-ratings can afford to be honest: the artifact proves the work.",
+                    "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#0B0B0B" }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Same care for a 13-row dataset as for a 13-million-row one.",
+                    "textStyle": { "fontFamily": "Segoe UI", "fontSize": "10pt", "color": "#0B0B0B" }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "1bcb8ff538070b5179bb",
+  "position": { "x": 880, "y": 40, "z": 2, "height": 50, "width": 360 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "github.com/SnorreP/cv-pipeline",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Copenhagen, Denmark",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

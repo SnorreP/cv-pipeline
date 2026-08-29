@@ -93,6 +93,113 @@ table experience
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Role Label' = experience[company] & "  —  " & experience[role] & IF ( experience[is_current], "  · current", "" )
+		dataType: string
+		isDataTypeInferred
+		lineageTag: cba5f35c-21a6-4030-9549-72da1055c6a2
+		summarizeBy: none
+		sortByColumn: 'Role Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Role Sort' = RANKX ( experience, experience[start_date],, DESC )
+		dataType: int64
+		isDataTypeInferred
+		lineageTag: c97d2db0-103a-4220-ac67-77743b4828e1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	column Period = FORMAT ( experience[start_date], "yyyy" ) & " – " & IF ( experience[is_current], "now", FORMAT ( experience[end_date], "yyyy" ) )
+		dataType: string
+		isDataTypeInferred
+		lineageTag: 97a662b7-0ca9-4d16-a22a-b7c4a536f916
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	measure 'Covered Months' =
+			VAR FirstStart =
+			    CALCULATE ( MIN ( experience[start_date] ), ALL ( experience ) )
+			VAR MonthCount = DATEDIFF ( FirstStart, TODAY (), MONTH )
+			VAR AllMonths =
+			    SELECTCOLUMNS (
+			        GENERATESERIES ( 0, MonthCount, 1 ),
+			        "@Month", EDATE ( FirstStart, [Value] )
+			    )
+			VAR CoveredList =
+			    FILTER (
+			        AllMonths,
+			        VAR ThisMonth = [@Month]
+			        RETURN
+			            NOT ISEMPTY (
+			                FILTER (
+			                    ALL ( experience ),
+			                    experience[start_date] <= EOMONTH ( ThisMonth, 0 )
+			                        && COALESCE ( experience[end_date], TODAY () ) >= ThisMonth
+			                )
+			            )
+			    )
+			RETURN
+			    COUNTROWS ( CoveredList )
+		formatString: 0
+		isHidden
+		lineageTag: 9b43cf83-6983-419b-9d93-5e3182eeeac3
+
+	measure 'Years of Experience' = ROUND ( DIVIDE ( [Covered Months], 12 ), 1 )
+		formatString: 0.0
+		lineageTag: 905945f5-e44e-4525-887f-7d268b163043
+
+	measure 'Current Tenure' =
+			VAR s =
+			    CALCULATE ( MIN ( experience[start_date] ), experience[is_current] = TRUE () )
+			RETURN
+			    DATEDIFF ( s, TODAY (), MONTH ) / 12
+		formatString: 0.0
+		lineageTag: 3f321f9a-67ed-44c2-959c-c64591388129
+
+	measure 'Career Since' = "since " & FORMAT ( CALCULATE ( MIN ( experience[start_date] ), ALL ( experience ) ), "MMM yyyy" )
+		lineageTag: a328ccc6-35fe-46e5-8ec0-2b4ae441dc53
+
+	measure 'Overlap Note' =
+			VAR RawMonths =
+			    SUMX (
+			        ALL ( experience ),
+			        DATEDIFF ( experience[start_date], COALESCE ( experience[end_date], TODAY () ), MONTH ) + 1
+			    )
+			VAR Dupes = RawMonths - [Covered Months]
+			RETURN
+			    IF ( Dupes > 0, FORMAT ( Dupes, "0" ) & " overlapping months counted once", BLANK () )
+		lineageTag: 465ea01f-6e84-46d4-8c20-7a0f761a4b5f
+
+	measure 'Current Role Note' = "at " & CALCULATE ( MAX ( experience[company] ), experience[is_current] = TRUE () )
+		lineageTag: 71a36fa0-a131-4e8d-8a1e-adbbc4a659e0
+
+	measure 'Timeline Start' =
+			VAR s = MIN ( experience[start_date] )
+			RETURN
+			    YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12
+		formatString: 0
+		lineageTag: 52c2fb35-273d-4886-a79f-c6a437da9d27
+
+	measure 'Timeline Duration' =
+			VAR s = MIN ( experience[start_date] )
+			VAR e = COALESCE ( MIN ( experience[end_date] ), TODAY () )
+			RETURN
+			    ( YEAR ( e ) + ( MONTH ( e ) - 1 ) / 12 ) - ( YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12 ) + 1 / 12
+		formatString: 0
+		lineageTag: 414cd7da-9a37-42da-b544-d69cf697dd29
+
+	measure 'Timeline Bar Color' = IF ( SELECTEDVALUE ( experience[is_current] ) = TRUE (), "#2A78D6", "#A8A6A0" )
+		lineageTag: 9c849997-4489-446c-84bf-73a76dc68edb
+
+	measure 'Dates Label' =
+			VAR s = SELECTEDVALUE ( experience[start_date] )
+			VAR e = SELECTEDVALUE ( experience[end_date] )
+			RETURN
+			    FORMAT ( s, "MMM yyyy" ) & " – " & IF ( ISBLANK ( e ), "today", FORMAT ( e, "MMM yyyy" ) )
+		lineageTag: 9cf1dc5d-b74c-4f5c-9b80-f6a0f6ac0d22
+
 	partition experience = m
 		mode: import
 		source =

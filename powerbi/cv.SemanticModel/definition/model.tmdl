@@ -24,6 +24,7 @@ ref table LocalDateTable_2fccfa77-4f07-4121-887b-faf520895119
 ref table project_technologies
 ref table projects
 ref table skills
+ref table Meta
 
 ref cultureInfo en-US
 

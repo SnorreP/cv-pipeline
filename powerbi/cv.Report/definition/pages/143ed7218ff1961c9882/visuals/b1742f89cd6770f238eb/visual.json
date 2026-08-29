@@ -1,0 +1,153 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b1742f89cd6770f238eb",
+  "position": {
+    "x": 350,
+    "y": 120,
+    "z": 4,
+    "height": 110,
+    "width": 280
+  },
+  "visual": {
+    "visualType": "shape",
+    "objects": {
+      "shape": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "roundEdge": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rotation": [
+        {
+          "properties": {
+            "shapeAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "fill": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FCFCFB'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D5D2CB'"
+                    }
+                  }
+                }
+              }
+            },
+            "weight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

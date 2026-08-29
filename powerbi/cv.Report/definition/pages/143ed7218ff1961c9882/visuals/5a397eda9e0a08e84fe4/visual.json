@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "5a397eda9e0a08e84fe4",
+  "position": {
+    "x": 970,
+    "y": 120,
+    "z": 6,
+    "height": 110,
+    "width": 280
+  },
+  "visual": {
+    "visualType": "shape",
+    "objects": {
+      "shape": [
+        {
+          "properties": {
+            "tileShape": {
+              "expr": {
+                "Literal": {
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "roundEdge": {
+              "expr": {
+                "Literal": {
+                  "Value": "6L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rotation": [
+        {
+          "properties": {
+            "shapeAngle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "fill": [
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A78D6'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

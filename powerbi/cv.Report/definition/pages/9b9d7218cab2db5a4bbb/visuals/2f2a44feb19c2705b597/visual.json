@@ -1,0 +1,261 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "2f2a44feb19c2705b597",
+  "position": {
+    "x": 40,
+    "y": 560,
+    "z": 11,
+    "height": 108,
+    "width": 740
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "Period"
+                }
+              },
+              "queryRef": "experience.Period",
+              "nativeQueryRef": "Period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "experience.company",
+              "nativeQueryRef": "company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "summary"
+                }
+              },
+              "queryRef": "experience.summary",
+              "nativeQueryRef": "summary"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "experience"
+                  }
+                },
+                "Property": "Period"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EDECE8'"
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52514E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B0B0B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FCFCFB'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FCFCFB'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ff821aaeae10cbd6449c",
+  "position": {
+    "x": 1040,
+    "y": 678,
+    "z": 18,
+    "height": 30,
+    "width": 200
+  },
+  "visual": {
+    "visualType": "actionButton",
+    "objects": {
+      "icon": [
+        {
+          "properties": {
+            "shapeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'blank'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "fill": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "text": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How it's built →'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A78D6'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PageNavigation'"
+                }
+              }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'143ed7218ff1961c9882'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

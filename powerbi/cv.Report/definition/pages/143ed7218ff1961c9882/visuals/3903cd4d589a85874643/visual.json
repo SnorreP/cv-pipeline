@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "3903cd4d589a85874643",
+  "position": {
+    "x": 676,
+    "y": 136,
+    "z": 12,
+    "height": 84,
+    "width": 248
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "3 · Azure Databricks",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "11pt",
+                      "color": "#0B0B0B"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "PySpark cleans the CSVs into Delta tables (schema cv)",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

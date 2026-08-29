@@ -1,0 +1,273 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "48c1561550f779cc7dff",
+  "position": {
+    "x": 820,
+    "y": 338,
+    "z": 13,
+    "height": 230,
+    "width": 420
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "skill"
+                }
+              },
+              "queryRef": "skills.skill",
+              "nativeQueryRef": "skill"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "Proficiency Level"
+                }
+              },
+              "queryRef": "skills.Proficiency Level",
+              "nativeQueryRef": "Proficiency Level"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "Skill Years"
+                }
+              },
+              "queryRef": "skills.Skill Years",
+              "nativeQueryRef": "Skill Years"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52514E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'OutsideEnd'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A78D6'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "skills.Proficiency Level"
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridlineShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B0B0B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

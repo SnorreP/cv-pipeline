@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "dc1e5bccc29a4fa40a3a",
+  "position": { "x": 820, "y": 578, "z": 14, "height": 18, "width": 420 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Terraform & Databricks are the newest — this CV is the practice.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "9pt",
+                      "fontStyle": "italic",
+                      "color": "#52514E"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "left"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
+      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

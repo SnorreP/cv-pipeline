@@ -1,0 +1,244 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "3215094adc62f1dcdca3",
+  "position": {
+    "x": 40,
+    "y": 208,
+    "z": 7,
+    "height": 96,
+    "width": 1200
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "Years of Experience"
+                }
+              },
+              "queryRef": "experience.Years of Experience",
+              "nativeQueryRef": "Years of Experience",
+              "displayName": "YEARS IN DATA & BI"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "Current Tenure"
+                }
+              },
+              "queryRef": "experience.Current Tenure",
+              "nativeQueryRef": "Current Tenure",
+              "displayName": "IN CURRENT ROLE"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "Yrs SQL"
+                }
+              },
+              "queryRef": "skills.Yrs SQL",
+              "nativeQueryRef": "Yrs SQL",
+              "displayName": "OF SQL"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "Yrs Power BI"
+                }
+              },
+              "queryRef": "skills.Yrs Power BI",
+              "nativeQueryRef": "Yrs Power BI",
+              "displayName": "OF POWER BI"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "30D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B0B0B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2A78D6'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "experience.Years of Experience"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52514E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "accentBar": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

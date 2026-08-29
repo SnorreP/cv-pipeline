@@ -1,0 +1,291 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c3bcd058def976a6b6f6",
+  "position": {
+    "x": 660,
+    "y": 340,
+    "z": 23,
+    "height": 190,
+    "width": 580
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "start_date"
+                }
+              },
+              "queryRef": "experience.start_date",
+              "nativeQueryRef": "start_date",
+              "displayName": "From"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "experience.company",
+              "nativeQueryRef": "company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "role"
+                }
+              },
+              "queryRef": "experience.role",
+              "nativeQueryRef": "role"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "location"
+                }
+              },
+              "queryRef": "experience.location",
+              "nativeQueryRef": "location"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "summary"
+                }
+              },
+              "queryRef": "experience.summary",
+              "nativeQueryRef": "summary",
+              "displayName": "What I did"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "experience"
+                  }
+                },
+                "Property": "start_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EDECE8'"
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52514E'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B0B0B'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FCFCFB'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FCFCFB'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

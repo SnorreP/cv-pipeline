@@ -1,0 +1,13 @@
+# Terraform - state can contain secrets, tfvars contains your subscription id
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+crash.log
+
+# Power BI - commit the .pbip project instead of binary .pbix
+*.pbix
+
+# OS junk
+.DS_Store
+Thumbs.db

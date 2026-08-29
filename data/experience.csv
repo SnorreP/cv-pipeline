@@ -1,0 +1,4 @@
+company,role,location,start_date,end_date,summary
+Contoso Ltd,Data Analyst,Stockholm,2023-04-01,,Building Power BI reports and automating data refreshes with PowerShell
+Fabrikam AB,BI Consultant,Gothenburg,2021-01-15,2023-03-31,Delivered dashboards and data models for retail clients
+Northwind Traders,Support Engineer,Malmo,2018-06-01,2020-12-31,Second-line support and reporting on ticket data

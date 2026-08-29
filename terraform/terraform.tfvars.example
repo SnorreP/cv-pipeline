@@ -1,0 +1,9 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# terraform.tfvars is gitignored so your subscription ID stays out of git.
+
+subscription_id = "00000000-0000-0000-0000-000000000000"
+github_repo_url = "https://github.com/YOUR-USERNAME/cv-pipeline"
+
+# Optional overrides:
+# location     = "westeurope"
+# node_type_id = "Standard_DS3_v2"

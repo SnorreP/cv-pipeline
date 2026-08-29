@@ -1,0 +1,3 @@
+project,description,tech_stack,url,year
+CV pipeline,This very project - my CV flowing from git through Databricks into Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/YOUR-USERNAME/cv-pipeline,2026
+Ticket analytics,Automated weekly reporting on support tickets,Power BI; PowerShell,,2024

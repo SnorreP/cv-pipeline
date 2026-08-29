@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# OPTIONAL -- serverless SQL warehouse (currently disabled)
+#
+# Terraform ignores this file because of the .optional extension.
+#
+# Azure free-trial subscriptions usually cannot run serverless compute, and
+# their 4-vCPU quota is too small for a classic SQL warehouse (~16 vCPUs).
+# That is why the main config uses a single-node cluster instead.
+#
+# If you later move to a pay-as-you-go subscription, rename this file to
+# serverless-warehouse.tf and run `terraform apply` again. A SQL warehouse
+# is the more production-like endpoint for Power BI: in Power BI Desktop,
+# swap the HTTP path for the one shown on the warehouse's
+# "Connection details" tab in the workspace UI.
+# ---------------------------------------------------------------------------
+
+resource "databricks_sql_endpoint" "cv_warehouse" {
+  name                      = "cv-warehouse"
+  cluster_size              = "2X-Small"
+  warehouse_type            = "PRO" # required for serverless
+  enable_serverless_compute = true
+  auto_stop_mins            = 10
+  max_num_clusters          = 1
+}
+
+output "warehouse_jdbc_url" {
+  description = "Contains the hostname and HTTP path for the warehouse."
+  value       = databricks_sql_endpoint.cv_warehouse.jdbc_url
+}

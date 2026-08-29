@@ -39,6 +39,13 @@ resource "databricks_cluster" "single_node" {
   node_type_id  = var.node_type_id
   num_workers   = 0
 
+  # New workspaces are secure-by-default and reject the legacy
+  # NO_ISOLATION mode (which is what an unset access mode falls back to).
+  # Dedicated single-user mode is the supported equivalent for a
+  # personal cluster: only you can attach to it.
+  data_security_mode = "SINGLE_USER"
+  single_user_name   = data.databricks_current_user.me.user_name
+
   # Shuts itself down after 15 idle minutes -- protects your credit.
   autotermination_minutes = 15
 

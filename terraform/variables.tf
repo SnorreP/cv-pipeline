@@ -16,10 +16,13 @@ variable "location" {
 
 variable "node_type_id" {
   description = <<-EOT
-    VM size for the single-node cluster. Standard_DS3_v2 has 4 vCPUs, which
-    is exactly the free-trial quota. If Azure rejects it with a quota or
-    availability error, try Standard_F4s or a different region.
+    VM size for the single-node cluster. Standard_D4s_v5 has 4 vCPUs, which
+    is exactly the free-trial quota -- and free trials only get quota for
+    v5-generation D/E families (older sizes like Standard_DS3_v2 come back
+    "not available"). If Azure still rejects it, probe what your
+    subscription can start with:
+      az vm list-skus --location <region> --resource-type virtualMachines
   EOT
   type        = string
-  default     = "Standard_DS3_v2"
+  default     = "Standard_D4s_v5"
 }

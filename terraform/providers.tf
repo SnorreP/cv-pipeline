@@ -33,6 +33,13 @@ provider "azurerm" {
 
 # Points at the workspace defined in main.tf. Terraform understands the
 # dependency: it creates the workspace first, then connects to it.
+#
+# One trap: if a change forces the WORKSPACE itself to be replaced (e.g.
+# a new location), this host becomes unknown during planning and every
+# databricks_* resource errors with a misleading "azure-cli auth: not
+# configured". Since those resources die with the workspace anyway, drop
+# them from state first, then apply:
+#   terraform state rm databricks_repo.cv databricks_cluster.single_node databricks_job.refresh_cv
 provider "databricks" {
   host      = azurerm_databricks_workspace.this.workspace_url
   auth_type = "azure-cli"

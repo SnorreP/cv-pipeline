@@ -270,5 +270,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "326b7eaa321f892e50ff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projects"
+              }
+            },
+            "Property": "year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f4d1dfb296b833df98a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projects"
+              }
+            },
+            "Property": "project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1befc394d338c44ce137",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projects"
+              }
+            },
+            "Property": "description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8e6a22eb1af1086779b4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projects"
+              }
+            },
+            "Property": "url"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

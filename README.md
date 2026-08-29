@@ -29,10 +29,12 @@ building or refreshing the report.
 
 | Path | What it is |
 |---|---|
-| `data/en/`, `data/da/` | The CV itself, as CSVs, in English and Danish. This is the only thing to edit when the CV changes -- keep the two languages in step. |
+| `data/en/`, `data/da/` | The CV itself, as CSVs, in English and Danish: `experience`, `education`, `skills`, `projects`, `profile`, `testimonials`, plus `labels` (the report's own headings and captions). This is the only thing to edit when the CV changes -- keep the two languages in step. |
+| `data/languages.csv` | The two-row dimension the language slicer sits on. Not language-specific, so it lives outside the folders. |
 | `databricks/01_transform_cv.py` | Notebook that turns the CSVs into Delta tables. |
 | `terraform/` | Defines the workspace, cluster, Git folder and refresh job. |
-| `powerbi/` | The report, saved as a Power BI Project (`.pbip`) in the "Build and publish the report" step. |
+| `powerbi/cv.pbip` | The report as a Power BI Project -- plain text, so it diffs in git. |
+| `powerbi/cv-theme.json` | The report theme: palette, type scale, quiet gridlines. Import via *View -> Themes -> Browse*. |
 | `Dockerfile`, `compose.yaml`, `deploy.cmd` | The containerized deploy toolchain (pinned Terraform + Azure CLI). |
 
 ## Prerequisites
@@ -46,7 +48,9 @@ building or refreshing the report.
   >= 1.5 and the [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
   locally works too.)
 - git
-- Power BI Desktop, plus a work/school account for publishing
+- Power BI Desktop. Publishing needs a work/school account -- if you only
+  have a personal Microsoft account, see "Publishing without a company
+  account" below; you already own a tenant that solves it.
 
 ## The deploy container
 
@@ -104,6 +108,50 @@ How it fits together:
 4. `terraform output` shows the workspace URL and the two values Power BI
    will need (`powerbi_server_hostname` and `powerbi_http_path`).
 
+### If you are on an Azure free trial, read this first
+
+Free-trial subscriptions are fenced in harder than the docs suggest, and
+each restriction fails with a different, misleading error. Verified by
+probing `az vm list-skus` and `az vm list-usage` across fourteen regions
+in August 2026:
+
+- **Most regions are closed to new customers.** `westeurope` and
+  `northeurope` both reject workspace creation with
+  `RequestDisallowedByAzure` -- "the selected region is currently not
+  accepting new customers". This is capacity policy, not your setup.
+- **Only v5-generation VM families are available.** Every `Standard_DS3_v2`,
+  `D4s_v3`, `F4s_v2` and friend comes back `NotAvailableForSubscription`
+  at Location level in *every* region checked -- including all six US
+  ones. The cluster fails with "The VM size you are specifying is not
+  available", which reads like a transient stockout but is not: retrying
+  or region-hopping among mainstream sizes will not help.
+- **`swedencentral` + `Standard_D4s_v5` was the only combination** that
+  both passed the VM checks and supports Databricks workspaces. That is
+  what `terraform.tfvars` and the `node_type_id` default now use.
+
+If it still fails, probe your own subscription rather than guessing:
+
+```
+.\deploy.cmd az vm list-skus --location <region> --resource-type virtualMachines
+.\deploy.cmd az vm list-usage --location <region> -o table
+```
+
+A size is usable only if its `restrictions` array is empty **and** its
+family quota is at least 4. Note that `Microsoft.Databricks` is not
+offered in every region -- `polandcentral` passes the VM checks but
+cannot host a workspace.
+
+Two more traps worth knowing:
+
+- **New workspaces reject the legacy cluster access mode.** Without an
+  explicit `data_security_mode`, cluster creation fails with "NO_ISOLATION
+  or custom access modes are not allowed in this workspace".
+  `databricks.tf` sets single-user mode for this reason.
+- **Changing `location` replaces the workspace**, which makes the
+  databricks provider's host unknown at plan time. Every `databricks_*`
+  resource then errors with a misleading `azure-cli auth: not configured`.
+  Drop them from state first -- see the note in `providers.tf`.
+
 ## Run the pipeline
 
 Open the workspace URL, go to **Workflows**, and run **refresh-cv-tables**.
@@ -133,6 +181,13 @@ identically in both languages).
 
 ## Build and publish the report
 
+The report already exists in `powerbi/cv.pbip` -- two pages, a language
+slicer, and a career timeline built as a stacked bar whose first segment
+is painted the page background so it disappears (the offset trick that
+turns a bar chart into a gantt). Open the `.pbip` and refresh; steps 1-3
+below only apply when you are wiring up a *new* workspace, which happens
+after every `terraform destroy`.
+
 1. Power BI Desktop -> **Get data -> Azure Databricks**.
 2. Paste `powerbi_server_hostname` and `powerbi_http_path` from the
    Terraform outputs, and choose **Import**.
@@ -151,14 +206,53 @@ identically in both languages).
    The cluster must be running for this step -- run the job first, or start
    the cluster from the Compute page.
 4. Tick the tables in the `cv` schema and load.
-5. Build the report. In *File -> Options -> Preview features*, enable
-   **Power BI Project (.pbip) save option**, then save the report into
-   `powerbi/` and commit -- `.pbip` projects are plain text and diff
-   properly in git, unlike `.pbix`.
-6. Publish to the Power BI Service, then *File -> Embed report ->
-   Publish to web* for the public link. (Publish to web must be enabled by
-   the tenant admin -- check this early. The Service also requires a
-   work/school account -- a personal Microsoft account cannot publish.)
+5. Save. In *File -> Options -> Preview features*, enable **Power BI
+   Project (.pbip) save option**, then save into `powerbi/` and commit --
+   `.pbip` projects are plain text and diff properly in git, unlike
+   `.pbix`. Desktop rewrites the files into its own canonical form on
+   save, which produces large but semantically empty diffs; that is
+   normal.
+6. Publish to the Power BI Service (**My workspace** -- other workspaces
+   need a Pro licence), then *File -> Embed report -> Publish to web* for
+   the public link. Publish to web must be enabled in the tenant first:
+   **app.powerbi.com -> ⚙ -> Admin portal -> Tenant settings -> Export and
+   sharing settings -> Publish to web**. Check this early.
+
+   The published link is genuinely public -- anyone with it can reach the
+   underlying data too. Fine for a CV; just never put anything private in
+   the CSVs.
+
+## Publishing without a company account
+
+The Power BI Service refuses personal Microsoft accounts (hotmail,
+outlook.com). You do not need an employer's tenant to get around it: the
+Azure signup already created one for you, and you are its Global
+Administrator.
+
+1. **Create a member user.** At [entra.microsoft.com](https://entra.microsoft.com),
+   signed in with your personal account (use a private window if it lands
+   in the wrong directory -- ⚙ *Directories + subscriptions* switches),
+   go to **Entra ID -> Users -> New user** and create
+   `you@<yourtenant>.onmicrosoft.com`. That UPN *is* a work/school
+   identity, which is the whole trick.
+2. **Give it the roles** on the Assignments tab: **Fabric Administrator**
+   (required to reach the tenant setting in step 4) and Global
+   Administrator (so it can use the licensing fallback in step 3).
+3. **Sign in to [app.powerbi.com](https://app.powerbi.com) as that user.**
+   Self-service sign-up assigns a **Fabric (Free)** licence automatically,
+   which is enough for Publish to web from My workspace. If self-service
+   is blocked, buy the $0 "Microsoft Fabric (Free)" SKU in the M365 admin
+   centre and assign it.
+4. **Enable Publish to web** in the admin portal as described above. You
+   are the admin, so nobody has to approve it.
+5. **Publish from Desktop as that user** -- sign *out* of any other
+   account first; Desktop silently reuses cached identities.
+
+Why not just use your employer's account: an embed code dies with its
+creator. Microsoft's docs are explicit that the creator must keep access
+and the required licence, so a link published from a work tenant breaks
+the day you leave -- and many enterprises disable Publish to web outright.
+Your own tenant outlives the Azure trial and stays under your control.
 
 ## Tear down
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "422a69d301da7e9ecd4d",
   "position": {
     "x": 40,
@@ -12,24 +12,6 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "project_technologies"
-                    }
-                  },
-                  "Property": "technology"
-                }
-              },
-              "queryRef": "project_technologies.technology",
-              "nativeQueryRef": "technology"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -44,7 +26,27 @@
                 }
               },
               "queryRef": "project_technologies.project",
-              "nativeQueryRef": "project"
+              "nativeQueryRef": "project",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "project_technologies"
+                    }
+                  },
+                  "Property": "technology"
+                }
+              },
+              "queryRef": "project_technologies.technology",
+              "nativeQueryRef": "technology",
+              "active": true
             }
           ]
         },
@@ -233,5 +235,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "94f645a75219005b3170",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "project_technologies"
+              }
+            },
+            "Property": "technology"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "895576d18d9bc4ff3aca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "project_technologies"
+              }
+            },
+            "Property": "project"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "026c16afcecf244b24b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "project_technologies"
+              }
+            },
+            "Property": "Tech Used"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

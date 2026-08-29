@@ -1,7 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "977d30031dc432fa62b6",
-  "position": { "x": 660, "y": 538, "z": 24, "height": 18, "width": 400 },
+  "position": {
+    "x": 660,
+    "y": 538,
+    "z": 24,
+    "height": 18,
+    "width": 400
+  },
   "visual": {
     "visualType": "textbox",
     "objects": {
@@ -13,7 +19,11 @@
                 "textRuns": [
                   {
                     "value": "WHY BUILD A CV LIKE THIS?",
-                    "textStyle": { "fontFamily": "Segoe UI Semibold", "fontSize": "9pt", "color": "#52514E" }
+                    "textStyle": {
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "9pt",
+                      "color": "#52514E"
+                    }
                   }
                 ],
                 "horizontalTextAlignment": "left"
@@ -24,9 +34,45 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
-      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
-      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }]
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

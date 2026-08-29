@@ -1,2 +1,137 @@
 cultureInfo en-US
 
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "experience.years_of_experience": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "experience",
+			          "ConceptualProperty": "Years of Experience"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "YEARS IN DATA & BI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "experience.current_tenure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "experience",
+			          "ConceptualProperty": "Current Tenure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "IN CURRENT ROLE": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "experience.start_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "experience",
+			          "ConceptualProperty": "start_date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "From": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "experience.summary": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "experience",
+			          "ConceptualProperty": "summary"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "What I did": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "skills.yrs_sql": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "skills",
+			          "ConceptualProperty": "Yrs SQL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "OF SQL": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "skills.yrs_power_bi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "skills",
+			          "ConceptualProperty": "Yrs Power BI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "OF POWER BI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

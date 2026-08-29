@@ -27,8 +27,8 @@ table projects
 
 	column url
 		dataType: string
-		dataCategory: WebUrl
 		lineageTag: c1b61c77-6445-4c75-9ce4-4a3ab4f5f4a8
+		dataCategory: WebUrl
 		summarizeBy: none
 		sourceColumn: url
 

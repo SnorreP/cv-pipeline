@@ -1,6 +1,25 @@
 table skills
 	lineageTag: 583063c9-f4fd-44ef-b867-714129d5cf6c
 
+	measure 'Proficiency Level' = MAX ( skills[proficiency] )
+		formatString: 0
+		lineageTag: 91e7ffdd-f86d-4bb6-96dc-bee00345eddf
+
+	measure 'Skill Years' = MAX ( skills[years_experience] )
+		formatString: 0.#
+		lineageTag: 3517b136-dab3-467a-a6ef-6c3b15dfad12
+
+	measure 'Skill Bar Label' = MAX ( skills[proficiency] ) & "/5 · " & FORMAT ( MAX ( skills[years_experience] ), "0.#" ) & " yrs"
+		lineageTag: efe3fcdd-9512-4b50-8282-edbc92f0e6c3
+
+	measure 'Yrs SQL' = CALCULATE ( MAX ( skills[years_experience] ), skills[skill] = "SQL" )
+		formatString: 0
+		lineageTag: 1b721b12-6d59-4f59-ad95-c882f7671bea
+
+	measure 'Yrs Power BI' = CALCULATE ( MAX ( skills[years_experience] ), skills[skill] = "Power BI" )
+		formatString: 0
+		lineageTag: bfa16f22-c9f0-4234-9a8c-dfdb1ac360de
+
 	column skill
 		dataType: string
 		lineageTag: d87a8538-1c64-48aa-9399-09e9179a2d08
@@ -38,31 +57,10 @@ table skills
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Skill Sort' = RANKX ( skills, skills[proficiency] * 100 + skills[years_experience],, DESC )
-		dataType: int64
-		isDataTypeInferred
 		lineageTag: 4310b327-fc31-4cf0-bc99-208c69d53f00
 		summarizeBy: none
 
 		annotation SummarizationSetBy = User
-
-	measure 'Proficiency Level' = MAX ( skills[proficiency] )
-		formatString: 0
-		lineageTag: 91e7ffdd-f86d-4bb6-96dc-bee00345eddf
-
-	measure 'Skill Years' = MAX ( skills[years_experience] )
-		formatString: 0.#
-		lineageTag: 3517b136-dab3-467a-a6ef-6c3b15dfad12
-
-	measure 'Skill Bar Label' = MAX ( skills[proficiency] ) & "/5 · " & FORMAT ( MAX ( skills[years_experience] ), "0.#" ) & " yrs"
-		lineageTag: efe3fcdd-9512-4b50-8282-edbc92f0e6c3
-
-	measure 'Yrs SQL' = CALCULATE ( MAX ( skills[years_experience] ), skills[skill] = "SQL" )
-		formatString: 0
-		lineageTag: 1b721b12-6d59-4f59-ad95-c882f7671bea
-
-	measure 'Yrs Power BI' = CALCULATE ( MAX ( skills[years_experience] ), skills[skill] = "Power BI" )
-		formatString: 0
-		lineageTag: bfa16f22-c9f0-4234-9a8c-dfdb1ac360de
 
 	partition skills = m
 		mode: import

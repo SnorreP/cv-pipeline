@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f6bd3d52a885a7e3c131",
   "position": {
     "x": 820,
@@ -183,5 +183,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bbfdaaf0e375074a3cd7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "education"
+              }
+            },
+            "Property": "Education Line"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

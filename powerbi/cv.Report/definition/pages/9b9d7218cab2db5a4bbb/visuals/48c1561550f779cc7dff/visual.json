@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "48c1561550f779cc7dff",
   "position": {
     "x": 820,
@@ -26,25 +26,8 @@
                 }
               },
               "queryRef": "skills.skill",
-              "nativeQueryRef": "skill"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "skills"
-                    }
-                  },
-                  "Property": "Proficiency Level"
-                }
-              },
-              "queryRef": "skills.Proficiency Level",
-              "nativeQueryRef": "Proficiency Level"
+              "nativeQueryRef": "skill",
+              "active": true
             }
           ]
         },
@@ -63,6 +46,24 @@
               },
               "queryRef": "skills.Skill Years",
               "nativeQueryRef": "Skill Years"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "skills"
+                    }
+                  },
+                  "Property": "Proficiency Level"
+                }
+              },
+              "queryRef": "skills.Proficiency Level",
+              "nativeQueryRef": "Proficiency Level"
             }
           ]
         }
@@ -269,5 +270,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f77515175bb0ee7c63d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "skills"
+              }
+            },
+            "Property": "skill"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "657e920f1f021ecb8143",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "skills"
+              }
+            },
+            "Property": "Proficiency Level"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c3b5180976ad01e086ba",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "skills"
+              }
+            },
+            "Property": "Skill Years"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

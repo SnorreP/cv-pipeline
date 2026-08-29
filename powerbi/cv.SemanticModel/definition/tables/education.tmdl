@@ -1,6 +1,16 @@
 table education
 	lineageTag: 450d71d5-52b3-4745-a455-59972bbe92e8
 
+	measure 'Education Line' =
+			MAXX (
+			    education,
+			    education[degree] & ", " & education[field] & " — "
+			        & education[institution] & ", "
+			        & FORMAT ( education[start_date], "yyyy" ) & "–"
+			        & FORMAT ( education[end_date], "yyyy" )
+			)
+		lineageTag: a88ac15f-7f32-46fa-b604-979cfbfe2826
+
 	column institution
 		dataType: string
 		lineageTag: 0944fedb-ad81-4a8c-86e0-3860c2540d30
@@ -56,16 +66,6 @@ table education
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
-
-	measure 'Education Line' =
-			MAXX (
-			    education,
-			    education[degree] & ", " & education[field] & " — "
-			        & education[institution] & ", "
-			        & FORMAT ( education[start_date], "yyyy" ) & "–"
-			        & FORMAT ( education[end_date], "yyyy" )
-			)
-		lineageTag: a88ac15f-7f32-46fa-b604-979cfbfe2826
 
 	partition education = m
 		mode: import

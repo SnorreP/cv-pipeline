@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9ec73d6521f0181661ae",
   "position": {
     "x": 40,
@@ -26,39 +26,8 @@
                 }
               },
               "queryRef": "experience.Role Label",
-              "nativeQueryRef": "Role Label"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "experience"
-                    }
-                  },
-                  "Property": "Timeline Start"
-                }
-              },
-              "queryRef": "experience.Timeline Start",
-              "nativeQueryRef": "Timeline Start"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "experience"
-                    }
-                  },
-                  "Property": "Timeline Duration"
-                }
-              },
-              "queryRef": "experience.Timeline Duration",
-              "nativeQueryRef": "Timeline Duration"
+              "nativeQueryRef": "Role Label",
+              "active": true
             }
           ]
         },
@@ -107,6 +76,38 @@
               "nativeQueryRef": "summary"
             }
           ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "Timeline Start"
+                }
+              },
+              "queryRef": "experience.Timeline Start",
+              "nativeQueryRef": "Timeline Start"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "experience"
+                    }
+                  },
+                  "Property": "Timeline Duration"
+                }
+              },
+              "queryRef": "experience.Timeline Duration",
+              "nativeQueryRef": "Timeline Duration"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -124,8 +125,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {
@@ -372,5 +372,93 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b67ff27c79ee1f915910",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "Role Label"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0810636dd632e0ad6a0f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "Timeline Start"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c3a1ad3ec0c54e4e9cb7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "Timeline Duration"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db6b7bfca5791e712c0e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "Dates Label"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f2ae835d2ac48816762",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "location"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a2dd56145deac31a6115",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "summary"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

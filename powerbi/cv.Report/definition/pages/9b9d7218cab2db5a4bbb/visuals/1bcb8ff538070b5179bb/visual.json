@@ -1,7 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "1bcb8ff538070b5179bb",
-  "position": { "x": 880, "y": 40, "z": 2, "height": 50, "width": 360 },
+  "position": {
+    "x": 880,
+    "y": 40,
+    "z": 2,
+    "height": 50,
+    "width": 360
+  },
   "visual": {
     "visualType": "textbox",
     "objects": {
@@ -41,9 +47,45 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
-      "background": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }],
-      "border": [{ "properties": { "show": { "expr": { "Literal": { "Value": "false" } } } } }]
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

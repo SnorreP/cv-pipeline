@@ -1,6 +1,9 @@
 table project_technologies
 	lineageTag: 96db8423-2335-45ab-b56c-60cc0425431d
 
+	measure 'Tech Used' = IF ( COUNTROWS ( project_technologies ) > 0, "●" )
+		lineageTag: c7a39bf4-8c87-40d0-a2ab-2359ee72bbcf
+
 	column project
 		dataType: string
 		lineageTag: 7a5a6251-0333-4222-9e30-b65570e7f6e8
@@ -16,9 +19,6 @@ table project_technologies
 		sourceColumn: technology
 
 		annotation SummarizationSetBy = Automatic
-
-	measure 'Tech Used' = IF ( COUNTROWS ( project_technologies ) > 0, "●" )
-		lineageTag: c7a39bf4-8c87-40d0-a2ab-2359ee72bbcf
 
 	partition project_technologies = m
 		mode: import

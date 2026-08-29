@@ -67,6 +67,15 @@ table education
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column language
+		dataType: string
+		lineageTag: d7dd2262-3967-5541-bf90-05b907d0d995
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+
 	partition education = m
 		mode: import
 		source =

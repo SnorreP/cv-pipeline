@@ -1,0 +1,37 @@
+key,text
+subtitle,Data- og BI-ingeniør  ·  København
+contact_location,"København, Danmark"
+strip_label,SÅDAN BLIVER SIDEN TIL
+strip_main,git push  →  Terraform  →  Azure Databricks  →  Power BI  →  
+strip_accent,siden du læser
+sec_experience,ERHVERVSERFARING
+sec_skills,"KOMPETENCER — SELVVURDERET, 1–5"
+sec_education,UDDANNELSE
+note_overlap,Totalen tæller faktisk arbejdede måneder — pausen mellem DUOS og IThelpers i starten af 2021 tælles ikke med.
+note_footnote,overlapsjusteret — samtidige roller tælles én gang
+cap_skills,Terraform og Databricks er de nyeste — dette CV er øvebanen.
+stat_years,ÅR PÅ ARBEJDSMARKEDET
+stat_tenure,I NUVÆRENDE ROLLE
+stat_sql,MED SQL
+stat_pbi,MED POWER BI
+btn_built,Sådan er den bygget  →
+btn_back,←  Tilbage til CV'et
+btn_repo,Se repoet  →
+p2_title,Under motorhjelmen
+p2_subtitle,Pipelinen der skriver dette CV — og dokumentationen.
+node1_title,1 · GitHub
+node1_desc,"CV-data som CSV + al kode, versionsstyret i ét repo"
+node2_title,2 · Terraform
+node2_desc,"opretter Databricks-workspace, cluster og job som kode"
+node3_title,3 · Azure Databricks
+node3_desc,PySpark renser CSV-filerne til Delta-tabeller (skema cv)
+node4_title,4 · Power BI
+node4_desc,importerer tabellerne; rapporten du læser
+sec_projects,PROJEKTER
+sec_tech,TEKNOLOGI PR. PROJEKT
+sec_exp_full,FULD ERHVERVSERFARING
+sec_why,HVORFOR BYGGE ET CV SÅDAN?
+why1,"Det er versionsstyret og reproducerbart — et git-repo, ikke en Word-fil."
+why2,Selvvurderingerne har råd til at være ærlige: artefaktet beviser arbejdet.
+why3,Samme omhu for et datasæt på 20 rækker som på 20 millioner.
+sec_language,SPROG

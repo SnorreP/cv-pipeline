@@ -75,6 +75,9 @@ resource "databricks_job" "refresh_cv" {
       # The .py file in the repo appears as a notebook (no extension)
       # inside the workspace.
       notebook_path = "${databricks_repo.cv.path}/databricks/01_transform_cv"
+
+      # No language parameter: the notebook loads English and Danish
+      # together and the report switches between them with a slicer.
     }
   }
 }

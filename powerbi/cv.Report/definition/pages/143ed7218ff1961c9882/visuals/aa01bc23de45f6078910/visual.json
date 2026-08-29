@@ -4,7 +4,7 @@
   "position": {
     "x": 40,
     "y": 678,
-    "z": 16,
+    "z": 17,
     "height": 30,
     "width": 200
   },
@@ -94,8 +94,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'← Back to the CV'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "labels"
+                    }
+                  },
+                  "Property": "lbl_btn_back"
                 }
               }
             },

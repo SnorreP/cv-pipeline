@@ -1,0 +1,12 @@
+skill,category,proficiency,years_experience,sort_order
+Power BI,Analytics,4,4,1
+SQL,Data,4,4,2
+Application support,Support,4,5,3
+Troubleshooting,Support,4,5,4
+Azure,Cloud,3,4,5
+Git,Tooling,3,3,6
+PowerShell,Scripting,3,4,7
+AI-assisted coding,Tooling,3,1,8
+Databricks,Data Platform,2,1,9
+Terraform,Infrastructure,2,1,10
+Google Cloud Platform,Cloud,1,1,11

@@ -1,0 +1,148 @@
+table labels
+	isHidden
+	lineageTag: 82bd03a2-0c8e-5dc3-ba2c-0456ff2ec71a
+
+	measure lbl_subtitle = CALCULATE ( MAX ( labels[text] ), labels[key] = "subtitle" )
+		lineageTag: a8ca2b59-5155-5170-b8b7-4cf2ed6941f6
+
+	measure lbl_contact_location = CALCULATE ( MAX ( labels[text] ), labels[key] = "contact_location" )
+		lineageTag: 433da41b-a5ac-5f50-8ffc-10c674268c53
+
+	measure lbl_strip_label = CALCULATE ( MAX ( labels[text] ), labels[key] = "strip_label" )
+		lineageTag: b1ffe69c-f076-54d4-9313-93d2070969cc
+
+	measure lbl_strip_main = CALCULATE ( MAX ( labels[text] ), labels[key] = "strip_main" )
+		lineageTag: e9fb920b-874f-5da7-b126-68d7deb1227a
+
+	measure lbl_strip_accent = CALCULATE ( MAX ( labels[text] ), labels[key] = "strip_accent" )
+		lineageTag: 1ba39aee-453b-5c3b-8192-a0efcee79496
+
+	measure lbl_sec_experience = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_experience" )
+		lineageTag: bed5a094-b7cc-54ae-a5f2-0c1439ea0d17
+
+	measure lbl_sec_skills = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_skills" )
+		lineageTag: 065ff40e-6055-5ddf-83a2-5f0e0135a0b1
+
+	measure lbl_sec_education = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_education" )
+		lineageTag: 8f9a9995-12ce-5600-b593-1d238a4df87e
+
+	measure lbl_note_overlap = CALCULATE ( MAX ( labels[text] ), labels[key] = "note_overlap" )
+		lineageTag: 97519808-b171-59a4-b6fe-84728d42bbc1
+
+	measure lbl_note_footnote = CALCULATE ( MAX ( labels[text] ), labels[key] = "note_footnote" )
+		lineageTag: c1ec6c30-012e-5a2b-b02c-5328981301d5
+
+	measure lbl_cap_skills = CALCULATE ( MAX ( labels[text] ), labels[key] = "cap_skills" )
+		lineageTag: 7ce33af9-8398-51d0-8fac-a62ef35938d5
+
+	measure lbl_stat_years = CALCULATE ( MAX ( labels[text] ), labels[key] = "stat_years" )
+		lineageTag: 5814c6f6-e00b-5ecd-b1d4-8167fcc236e0
+
+	measure lbl_stat_tenure = CALCULATE ( MAX ( labels[text] ), labels[key] = "stat_tenure" )
+		lineageTag: 49b43ef9-bf19-5dda-a1a1-e3fa136b9320
+
+	measure lbl_stat_sql = CALCULATE ( MAX ( labels[text] ), labels[key] = "stat_sql" )
+		lineageTag: ef54dd85-de90-5903-bec5-6b1b122e24cb
+
+	measure lbl_stat_pbi = CALCULATE ( MAX ( labels[text] ), labels[key] = "stat_pbi" )
+		lineageTag: 2452790a-4286-52c1-99d7-6ee6e87e0ae9
+
+	measure lbl_btn_built = CALCULATE ( MAX ( labels[text] ), labels[key] = "btn_built" )
+		lineageTag: e6378765-a5e4-5537-975d-9d94105e274a
+
+	measure lbl_btn_back = CALCULATE ( MAX ( labels[text] ), labels[key] = "btn_back" )
+		lineageTag: 26eb341c-eb81-5676-9fa1-34b41fd5ad8e
+
+	measure lbl_btn_repo = CALCULATE ( MAX ( labels[text] ), labels[key] = "btn_repo" )
+		lineageTag: b89b7cb3-6970-5e11-b772-516e8bc1b954
+
+	measure lbl_p2_title = CALCULATE ( MAX ( labels[text] ), labels[key] = "p2_title" )
+		lineageTag: b16fc9db-fe6d-57f6-b050-c30a91454d04
+
+	measure lbl_p2_subtitle = CALCULATE ( MAX ( labels[text] ), labels[key] = "p2_subtitle" )
+		lineageTag: 0909a175-4aa6-5e42-98f4-da5bc5365c8a
+
+	measure lbl_node1_title = CALCULATE ( MAX ( labels[text] ), labels[key] = "node1_title" )
+		lineageTag: 3ddbfaed-1859-5b83-9b08-acad6235eb46
+
+	measure lbl_node1_desc = CALCULATE ( MAX ( labels[text] ), labels[key] = "node1_desc" )
+		lineageTag: 939859cd-ed6d-5ee1-aff0-49d0929bdbba
+
+	measure lbl_node2_title = CALCULATE ( MAX ( labels[text] ), labels[key] = "node2_title" )
+		lineageTag: ed55bb0a-0e20-5ec5-94f0-200b9a45e0b7
+
+	measure lbl_node2_desc = CALCULATE ( MAX ( labels[text] ), labels[key] = "node2_desc" )
+		lineageTag: 626fdbed-0685-55bb-b4a6-9ec3185dc2da
+
+	measure lbl_node3_title = CALCULATE ( MAX ( labels[text] ), labels[key] = "node3_title" )
+		lineageTag: 5b8e00ce-3142-5cbe-8598-ff1682952df3
+
+	measure lbl_node3_desc = CALCULATE ( MAX ( labels[text] ), labels[key] = "node3_desc" )
+		lineageTag: 6eda498b-928d-5d76-b8ad-e3afd19558c9
+
+	measure lbl_node4_title = CALCULATE ( MAX ( labels[text] ), labels[key] = "node4_title" )
+		lineageTag: 91167b9d-fea2-587a-b25c-4a04b71eb4d3
+
+	measure lbl_node4_desc = CALCULATE ( MAX ( labels[text] ), labels[key] = "node4_desc" )
+		lineageTag: a4fd85eb-378f-5dfb-805f-1e5eb1c16c59
+
+	measure lbl_sec_projects = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_projects" )
+		lineageTag: 4595cd38-2509-5f26-951c-3fb1d9b2d808
+
+	measure lbl_sec_tech = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_tech" )
+		lineageTag: 80c52e20-d29c-590e-afce-18fac9fcea63
+
+	measure lbl_sec_exp_full = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_exp_full" )
+		lineageTag: aac12501-753a-501b-95ec-30be4de86982
+
+	measure lbl_sec_why = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_why" )
+		lineageTag: 0601d023-e890-53a6-8bb5-1e31db99abd2
+
+	measure lbl_why1 = CALCULATE ( MAX ( labels[text] ), labels[key] = "why1" )
+		lineageTag: 41b1a4be-9aee-5aec-8b48-b3b9aa155719
+
+	measure lbl_why2 = CALCULATE ( MAX ( labels[text] ), labels[key] = "why2" )
+		lineageTag: 8d774430-feb5-5c5e-8cc7-4d29a6148058
+
+	measure lbl_why3 = CALCULATE ( MAX ( labels[text] ), labels[key] = "why3" )
+		lineageTag: 31d0eb8f-56cf-5502-8192-c34a3af412ae
+
+	measure lbl_sec_language = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_language" )
+		lineageTag: e0cec431-1f13-5800-84fa-45779ff42ce2
+
+	column key
+		dataType: string
+		lineageTag: 98c12f8f-c221-5331-877b-7cb52e730b5c
+		summarizeBy: none
+		sourceColumn: key
+
+		annotation SummarizationSetBy = Automatic
+
+	column text
+		dataType: string
+		lineageTag: ae10f0ec-d3c0-503d-8748-0c38d9531e5c
+		summarizeBy: none
+		sourceColumn: text
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 2f353b52-e485-5c85-b7ca-1feca632df3d
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	partition labels = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    labels_Table = cv_Schema{[Name="labels",Kind="Table"]}[Data]
+				in
+				    labels_Table
+
+	annotation PBI_Id = 82bd03a20c8e5dc3ba2c0456ff2ec71a

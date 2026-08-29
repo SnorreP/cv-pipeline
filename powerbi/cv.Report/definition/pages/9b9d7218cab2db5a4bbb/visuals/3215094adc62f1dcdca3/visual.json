@@ -4,8 +4,8 @@
   "position": {
     "x": 40,
     "y": 208,
-    "z": 7,
-    "height": 96,
+    "z": 8,
+    "height": 64,
     "width": 1200
   },
   "visual": {
@@ -26,8 +26,7 @@
                 }
               },
               "queryRef": "experience.Years of Experience",
-              "nativeQueryRef": "Years of Experience",
-              "displayName": "YEARS IN DATA & BI"
+              "nativeQueryRef": "Years of Experience"
             },
             {
               "field": {
@@ -41,8 +40,7 @@
                 }
               },
               "queryRef": "experience.Current Tenure",
-              "nativeQueryRef": "Current Tenure",
-              "displayName": "IN CURRENT ROLE"
+              "nativeQueryRef": "Current Tenure"
             },
             {
               "field": {
@@ -56,8 +54,7 @@
                 }
               },
               "queryRef": "skills.Yrs SQL",
-              "nativeQueryRef": "Yrs SQL",
-              "displayName": "OF SQL"
+              "nativeQueryRef": "Yrs SQL"
             },
             {
               "field": {
@@ -71,8 +68,7 @@
                 }
               },
               "queryRef": "skills.Yrs Power BI",
-              "nativeQueryRef": "Yrs Power BI",
-              "displayName": "OF POWER BI"
+              "nativeQueryRef": "Yrs Power BI"
             }
           ]
         }
@@ -137,25 +133,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#52514E'"
-                    }
-                  }
+                  "Value": "false"
                 }
               }
             }

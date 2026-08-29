@@ -94,8 +94,13 @@
           "properties": {
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'How it's built →'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "labels"
+                    }
+                  },
+                  "Property": "lbl_btn_built"
                 }
               }
             },

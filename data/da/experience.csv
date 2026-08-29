@@ -1,0 +1,6 @@
+company,role,location,start_date,end_date,summary,sort_order
+WPP Media (tidligere GroupM),Data and Applications Support Engineer,København,2022-05-01,,Azure tech stack med Terraform som infrastructure as code; SQL og serverless SQL integreret i Power BI-rapporter; support på internt udviklede applikationer fra fejlsøgning på log-niveau og analyse af fejlkoder til oprettelse af work items i backloggen og implementering af fixes via AI-kodning.,1
+Camvision,First Line Support,Danmark,2021-08-01,2022-04-30,Telefonisk og remote support på overvågning og alarmer.,2
+IThelpers,IT-supporter,Danmark,2021-02-01,2021-07-31,"Udkørende IT-support for privat- og erhvervskunder: internet-, mail- og printeropsætning samt fejlfinding af hardware og software på PC og Mac.",3
+DUOS,Handicaphjælper,Danmark,2017-09-01,2020-12-31,Handicaphjælper med forståelse for det professionelle og personlige skel.,4
+Scandlines,Cateringassistent,Danmark,2014-03-01,2017-08-31,Kundeservice på tværs af nationaliteter.,5

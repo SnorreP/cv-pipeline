@@ -1,0 +1,55 @@
+table profile
+	lineageTag: e20199d2-dbcf-5ac8-831d-b8d7d5e0f4ef
+
+	column headline
+		dataType: string
+		lineageTag: 27eafc07-1044-56b1-9aa2-402cbcf4b50e
+		summarizeBy: none
+		sourceColumn: headline
+
+		annotation SummarizationSetBy = Automatic
+
+	column summary
+		dataType: string
+		lineageTag: 731a55de-272f-5374-84bf-81dc52e089d5
+		summarizeBy: none
+		sourceColumn: summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column personal
+		dataType: string
+		lineageTag: 44036b48-4b0a-5d66-94d8-9b9d88818d76
+		summarizeBy: none
+		sourceColumn: personal
+
+		annotation SummarizationSetBy = Automatic
+
+	column references_note
+		dataType: string
+		lineageTag: b7b0ffa6-4a53-514b-be9e-7972239152c6
+		summarizeBy: none
+		sourceColumn: references_note
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: 25486c03-f8c9-56c2-a44b-d4c99cfb3367
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	partition profile = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    profile_Table = cv_Schema{[Name="profile",Kind="Table"]}[Data]
+				in
+				    profile_Table
+
+	annotation PBI_Id = e20199d2dbcf5ac8831db8d7d5e0f4ef

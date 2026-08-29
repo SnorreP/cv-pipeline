@@ -1,0 +1,37 @@
+key,text
+subtitle,Data & BI Engineer  ·  Copenhagen
+contact_location,"Copenhagen, Denmark"
+strip_label,HOW THIS PAGE EXISTS
+strip_main,git push  →  Terraform  →  Azure Databricks  →  Power BI  →  
+strip_accent,the page you're reading
+sec_experience,EXPERIENCE
+sec_skills,"SKILLS — SELF-RATED, 1–5"
+sec_education,EDUCATION
+note_overlap,The total counts distinct months actually worked — the gap between DUOS and IThelpers in early 2021 is not counted.
+note_footnote,overlap-adjusted — concurrent roles counted once
+cap_skills,Terraform & Databricks are the newest — this CV is the practice.
+stat_years,YEARS IN WORK
+stat_tenure,IN CURRENT ROLE
+stat_sql,OF SQL
+stat_pbi,OF POWER BI
+btn_built,How it's built  →
+btn_back,←  Back to the CV
+btn_repo,View the repo  →
+p2_title,Under the hood
+p2_subtitle,The pipeline that writes this CV — and the receipts.
+node1_title,1 · GitHub
+node1_desc,"CV data as CSV + all code, versioned in one repo"
+node2_title,2 · Terraform
+node2_desc,"provisions the Databricks workspace, cluster and job as code"
+node3_title,3 · Azure Databricks
+node3_desc,PySpark cleans the CSVs into Delta tables (schema cv)
+node4_title,4 · Power BI
+node4_desc,imports the tables; the report you're reading
+sec_projects,PROJECTS
+sec_tech,TECH BY PROJECT
+sec_exp_full,EXPERIENCE IN FULL
+sec_why,WHY BUILD A CV LIKE THIS?
+why1,"It's version-controlled and reproducible — a git repo, not a Word file."
+why2,The self-ratings can afford to be honest: the artifact proves the work.
+why3,Same care for a 20-row dataset as for a 20-million-row one.
+sec_language,LANGUAGE

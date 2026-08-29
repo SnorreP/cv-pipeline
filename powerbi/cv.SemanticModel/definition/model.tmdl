@@ -26,5 +26,9 @@ ref table projects
 ref table skills
 ref table Meta
 
+ref table languages
+ref table labels
+ref table profile
+ref table testimonials
 ref cultureInfo en-US
 

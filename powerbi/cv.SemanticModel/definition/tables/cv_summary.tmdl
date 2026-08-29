@@ -1,30 +1,46 @@
 table cv_summary
 	isHidden
-	lineageTag: 97018d91-fb31-4995-8cf2-4a9a4619e0c2
+	lineageTag: dd8b89f1-68eb-51c4-aa78-de599ef89b21
 
-	column metric
+	column language
 		dataType: string
-		isHidden
-		lineageTag: a13c2247-2d5f-41df-9ef3-716209e9feaa
+		lineageTag: 858ead27-0db5-5e90-b6cf-4dc7b2e834f4
 		summarizeBy: none
-		sourceColumn: metric
-
-		changedProperty = IsHidden
+		sourceColumn: language
 
 		annotation SummarizationSetBy = Automatic
 
-	column value
+	column years_of_experience
 		dataType: double
-		isHidden
-		lineageTag: e16138ee-5cb5-48b7-94b7-330f8dda8870
+		lineageTag: f8866ad5-d68c-54f8-8d17-4071a1c43c62
 		summarizeBy: sum
-		sourceColumn: value
-
-		changedProperty = IsHidden
+		sourceColumn: years_of_experience
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	column employers
+		dataType: double
+		lineageTag: 641d7968-636a-5fe6-b726-36339506e7a0
+		summarizeBy: sum
+		sourceColumn: employers
+
+		annotation SummarizationSetBy = Automatic
+
+	column skills
+		dataType: double
+		lineageTag: 6c43ccf7-e442-5991-ad38-97623df3585e
+		summarizeBy: sum
+		sourceColumn: skills
+
+		annotation SummarizationSetBy = Automatic
+
+	column projects
+		dataType: double
+		lineageTag: 45d2f4e4-2177-52ed-8667-7685cb19724c
+		summarizeBy: sum
+		sourceColumn: projects
+
+		annotation SummarizationSetBy = Automatic
 
 	partition cv_summary = m
 		mode: import
@@ -37,5 +53,4 @@ table cv_summary
 				in
 				    cv_summary_Table
 
-	changedProperty = IsHidden
-
+	annotation PBI_Id = dd8b89f168eb51c4aa78de599ef89b21

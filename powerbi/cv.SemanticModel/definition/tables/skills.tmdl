@@ -25,7 +25,7 @@ table skills
 		lineageTag: d87a8538-1c64-48aa-9399-09e9179a2d08
 		summarizeBy: none
 		sourceColumn: skill
-		sortByColumn: 'Skill Sort'
+		sortByColumn: sort_order
 
 		annotation SummarizationSetBy = Automatic
 
@@ -56,11 +56,23 @@ table skills
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Skill Sort' = RANKX ( skills, skills[proficiency] * 100 + skills[years_experience],, DESC )
-		lineageTag: 4310b327-fc31-4cf0-bc99-208c69d53f00
+	column language
+		dataType: string
+		lineageTag: ef0443a3-9870-5c1e-82f6-c9c24e0ffe1e
 		summarizeBy: none
+		sourceColumn: language
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e4d1584-e544-5384-95b2-6819e0e8cba0
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
 
 	partition skills = m
 		mode: import

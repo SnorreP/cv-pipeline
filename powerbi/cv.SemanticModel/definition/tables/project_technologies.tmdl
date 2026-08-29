@@ -20,6 +20,15 @@ table project_technologies
 
 		annotation SummarizationSetBy = Automatic
 
+	column language
+		dataType: string
+		lineageTag: fdad35d9-a8c6-563a-a2ab-15a161e8468a
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+
 	partition project_technologies = m
 		mode: import
 		source =

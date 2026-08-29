@@ -2,8 +2,9 @@ table experience
 	lineageTag: bab9f28d-ad2c-4359-bed8-dbf5dd9a885f
 
 	measure 'Covered Months' =
-			VAR FirstStart =
-			    CALCULATE ( MIN ( experience[start_date] ), ALL ( experience ) )
+			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
+			VAR Rows = FILTER ( ALL ( experience ), experience[language] = Lang )
+			VAR FirstStart = MINX ( Rows, experience[start_date] )
 			VAR MonthCount = DATEDIFF ( FirstStart, TODAY (), MONTH )
 			VAR AllMonths =
 			    SELECTCOLUMNS (
@@ -17,7 +18,7 @@ table experience
 			        RETURN
 			            NOT ISEMPTY (
 			                FILTER (
-			                    ALL ( experience ),
+			                    Rows,
 			                    experience[start_date] <= EOMONTH ( ThisMonth, 0 )
 			                        && COALESCE ( experience[end_date], TODAY () ) >= ThisMonth
 			                )
@@ -41,13 +42,17 @@ table experience
 		formatString: 0.0
 		lineageTag: 3f321f9a-67ed-44c2-959c-c64591388129
 
-	measure 'Career Since' = "since " & FORMAT ( CALCULATE ( MIN ( experience[start_date] ), ALL ( experience ) ), "MMM yyyy" )
+	measure 'Career Since' =
+			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
+			RETURN
+			    "since " & FORMAT ( MINX ( FILTER ( ALL ( experience ), experience[language] = Lang ), experience[start_date] ), "MMM yyyy" )
 		lineageTag: a328ccc6-35fe-46e5-8ec0-2b4ae441dc53
 
 	measure 'Overlap Note' =
+			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
 			VAR RawMonths =
 			    SUMX (
-			        ALL ( experience ),
+			        FILTER ( ALL ( experience ), experience[language] = Lang ),
 			        DATEDIFF ( experience[start_date], COALESCE ( experience[end_date], TODAY () ), MONTH ) + 1
 			    )
 			VAR Dupes = RawMonths - [Covered Months]
@@ -178,21 +183,33 @@ table experience
 	column 'Role Label' = experience[company] & "  —  " & experience[role] & IF ( experience[is_current], "  · current", "" )
 		lineageTag: cba5f35c-21a6-4030-9549-72da1055c6a2
 		summarizeBy: none
-		sortByColumn: 'Role Sort'
+		sortByColumn: sort_order
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'Role Sort' = RANKX ( experience, experience[start_date],, DESC )
-		lineageTag: c97d2db0-103a-4220-ac67-77743b4828e1
-		summarizeBy: none
-
-		annotation SummarizationSetBy = User
 
 	column Period = FORMAT ( experience[start_date], "yyyy" ) & " – " & IF ( experience[is_current], "now", FORMAT ( experience[end_date], "yyyy" ) )
 		lineageTag: 97a662b7-0ca9-4d16-a22a-b7c4a536f916
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: c4d75061-b3d9-55e9-911d-d2255ddedbd8
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 3203984e-bae3-5f90-abf1-4b50aace7f24
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
 
 	partition experience = m
 		mode: import

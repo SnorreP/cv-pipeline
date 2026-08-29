@@ -43,6 +43,15 @@ table projects
 
 		annotation SummarizationSetBy = Automatic
 
+	column language
+		dataType: string
+		lineageTag: 3a42140f-60f1-51a4-b495-d92c9e3e57fe
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+
 	partition projects = m
 		mode: import
 		source =

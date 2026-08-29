@@ -29,7 +29,7 @@ building or refreshing the report.
 
 | Path | What it is |
 |---|---|
-| `data/` | The CV itself, as CSVs. This is the only thing to edit when the CV changes. |
+| `data/en/`, `data/da/` | The CV itself, as CSVs, in English and Danish. This is the only thing to edit when the CV changes -- keep the two languages in step. |
 | `databricks/01_transform_cv.py` | Notebook that turns the CSVs into Delta tables. |
 | `terraform/` | Defines the workspace, cluster, Git folder and refresh job. |
 | `powerbi/` | The report, saved as a Power BI Project (`.pbip`) in the "Build and publish the report" step. |
@@ -109,6 +109,27 @@ How it fits together:
 Open the workspace URL, go to **Workflows**, and run **refresh-cv-tables**.
 The first run takes ~5 minutes extra while the cluster starts. Alternatively,
 open the notebook under **Workspace -> Repos** and hit **Run all**.
+
+### Two languages, one report
+
+The CV is committed in both English (`data/en/`) and Danish (`data/da/`),
+and the pipeline loads **both**. Every table carries a `language` column,
+a `languages` dimension joins to all of them, and a single slicer on the
+report switches everything at once -- so one published link serves Danish
+and English applications alike.
+
+The report's own words switch too. Section headings, captions and button
+text are not typed into the report: they live in `data/<lang>/labels.csv`
+and reach the canvas as measures, so the language slicer moves them along
+with the CV content. To reword a heading, edit the CSV -- not the report.
+
+The slicer is single-select with the selection forced, so exactly one
+language is always applied and the report can never render half-empty.
+
+When adding to the CV, keep the two folders in step: same tables, same
+columns, same number of rows, and the same `sort_order` values (that
+column, rather than a DAX ranking, is what orders roles and skills
+identically in both languages).
 
 ## Build and publish the report
 

@@ -22,3 +22,39 @@ relationship AutoDetected_cdd0ba1e-3541-4837-a9a3-c93dfb720459
 	fromColumn: project_technologies.project
 	toColumn: projects.project
 
+
+relationship 3831a964-6d86-5edf-9a92-26c43c67039b
+	fromColumn: experience.language
+	toColumn: languages.code
+
+relationship 5c242d1b-5f95-5013-861a-ffe362489f16
+	fromColumn: skills.language
+	toColumn: languages.code
+
+relationship 2a3fbdc8-a1f0-57e6-8b1e-ca44894d4e4c
+	fromColumn: education.language
+	toColumn: languages.code
+
+relationship 64151f24-c2fd-5389-85fa-d738b694a75b
+	fromColumn: projects.language
+	toColumn: languages.code
+
+relationship 24fcd062-70d4-51b2-8290-310aebc940f5
+	fromColumn: project_technologies.language
+	toColumn: languages.code
+
+relationship 8f965b5c-fa0c-596f-bc1f-1ab1f1783636
+	fromColumn: profile.language
+	toColumn: languages.code
+
+relationship 6b51be9b-47ed-5010-8dfd-cbc0954448b2
+	fromColumn: testimonials.language
+	toColumn: languages.code
+
+relationship 0919eb9a-6d6c-5412-8dd1-e136c9431077
+	fromColumn: labels.language
+	toColumn: languages.code
+
+relationship 14aeff63-6002-55d1-adf5-eff6e780c21f
+	fromColumn: cv_summary.language
+	toColumn: languages.code

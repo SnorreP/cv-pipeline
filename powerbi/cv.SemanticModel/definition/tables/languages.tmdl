@@ -1,0 +1,41 @@
+table languages
+	lineageTag: ae47b3e9-39f8-5aec-aeff-201e80f1086c
+
+	column code
+		dataType: string
+		lineageTag: efb6a28f-d4fa-5231-b037-7c2a399ed854
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: b98f61e3-0b31-5ece-adfe-9960feec09c8
+		summarizeBy: none
+		sourceColumn: name
+		sortByColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column sort_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 06ce179e-5a87-5e14-91d8-9e8c8b9f20e1
+		summarizeBy: sum
+		sourceColumn: sort_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition languages = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
+				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    languages_Table = cv_Schema{[Name="languages",Kind="Table"]}[Data]
+				in
+				    languages_Table
+
+	annotation PBI_Id = ae47b3e939f85aecaeff201e80f1086c

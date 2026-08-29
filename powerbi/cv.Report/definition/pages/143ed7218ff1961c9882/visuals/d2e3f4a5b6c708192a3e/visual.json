@@ -5,8 +5,8 @@
     "x": 986,
     "y": 160,
     "z": 21,
-    "width": 248,
-    "height": 56
+    "height": 56,
+    "width": 248
   },
   "visual": {
     "visualType": "cardVisual",
@@ -165,5 +165,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "337beddddd2e15de67cd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "labels"
+              }
+            },
+            "Property": "lbl_node4_desc"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

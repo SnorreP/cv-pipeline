@@ -1,10 +1,10 @@
 /// The Databricks workspace this report reads from.
-///
+/// 
 /// All three values change every time the workspace is torn down and
 /// re-created, which is the normal cycle for this project. They live here
 /// so a rebuild is three edits in one dialog (Transform data -> Manage
 /// parameters) instead of a find-and-replace across every table query.
-///
+/// 
 /// Host and HttpPath come straight from `terraform output`
 /// (powerbi_server_hostname and powerbi_http_path).
 expression Host = "adb-7405609537088159.19.azuredatabricks.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
@@ -27,3 +27,4 @@ expression Catalog = "dbw_cv_pipeline_7405609537088159" meta [IsParameterQuery=t
 	lineageTag: 6a08c3f5-9e21-4b7c-8d34-1f52e7a09c68
 
 	annotation PBI_ResultType = Text
+

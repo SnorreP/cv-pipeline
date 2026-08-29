@@ -75,7 +75,6 @@ table education
 
 		annotation SummarizationSetBy = Automatic
 
-
 	partition education = m
 		mode: import
 		source =
@@ -86,4 +85,6 @@ table education
 				    education_Table = cv_Schema{[Name="education",Kind="Table"]}[Data]
 				in
 				    education_Table
+
+	annotation PBI_ResultType = Table
 

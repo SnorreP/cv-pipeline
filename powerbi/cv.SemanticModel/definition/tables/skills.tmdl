@@ -73,7 +73,6 @@ table skills
 
 		annotation SummarizationSetBy = Automatic
 
-
 	partition skills = m
 		mode: import
 		source =
@@ -84,4 +83,6 @@ table skills
 				    skills_Table = cv_Schema{[Name="skills",Kind="Table"]}[Data]
 				in
 				    skills_Table
+
+	annotation PBI_ResultType = Table
 

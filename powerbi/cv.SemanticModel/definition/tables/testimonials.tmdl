@@ -53,3 +53,6 @@ table testimonials
 				    testimonials_Table
 
 	annotation PBI_Id = 1b1a4292046653678021bf3b15ac62c9
+
+	annotation PBI_ResultType = Table
+

@@ -54,3 +54,6 @@ table cv_summary
 				    cv_summary_Table
 
 	annotation PBI_Id = dd8b89f168eb51c4aa78de599ef89b21
+
+	annotation PBI_ResultType = Table
+

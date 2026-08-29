@@ -53,3 +53,6 @@ table profile
 				    profile_Table
 
 	annotation PBI_Id = e20199d2dbcf5ac8831db8d7d5e0f4ef
+
+	annotation PBI_ResultType = Table
+

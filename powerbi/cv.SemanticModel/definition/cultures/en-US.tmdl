@@ -12,19 +12,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Years of Experience"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "YEARS IN DATA & BI": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "experience.current_tenure": {
 			      "Definition": {
@@ -33,19 +21,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Current Tenure"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "IN CURRENT ROLE": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "experience.start_date": {
 			      "Definition": {
@@ -96,19 +72,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Yrs SQL"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "OF SQL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "skills.yrs_power_bi": {
 			      "Definition": {
@@ -117,19 +81,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Yrs Power BI"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "OF POWER BI": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  }
 			}

@@ -5,8 +5,8 @@
     "x": 880,
     "y": 40,
     "z": 2,
-    "width": 360,
-    "height": 26
+    "height": 26,
+    "width": 360
   },
   "visual": {
     "visualType": "cardVisual",
@@ -165,5 +165,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "912661d7a84389a12240",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "labels"
+              }
+            },
+            "Property": "lbl_contact_location"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

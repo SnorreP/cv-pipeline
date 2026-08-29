@@ -146,3 +146,6 @@ table labels
 				    labels_Table
 
 	annotation PBI_Id = 82bd03a20c8e5dc3ba2c0456ff2ec71a
+
+	annotation PBI_ResultType = Table
+

@@ -18,7 +18,6 @@ relationship 118dd0c8-ef0e-453f-95dd-5931ea73b5b0
 	fromColumn: experience.end_date
 	toColumn: LocalDateTable_2fccfa77-4f07-4121-887b-faf520895119.Date
 
-
 relationship 3831a964-6d86-5edf-9a92-26c43c67039b
 	fromColumn: experience.language
 	toColumn: languages.code
@@ -54,3 +53,4 @@ relationship 0919eb9a-6d6c-5412-8dd1-e136c9431077
 relationship 14aeff63-6002-55d1-adf5-eff6e780c21f
 	fromColumn: cv_summary.language
 	toColumn: languages.code
+

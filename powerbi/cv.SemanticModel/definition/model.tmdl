@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["cv_summary","education","experience","project_technologies","projects","skills"]
+annotation PBI_QueryOrder = ["cv_summary","education","experience","project_technologies","projects","skills","languages","labels","profile","testimonials","Host","HttpPath","Catalog"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -25,10 +25,10 @@ ref table project_technologies
 ref table projects
 ref table skills
 ref table Meta
-
 ref table languages
 ref table labels
 ref table profile
 ref table testimonials
+
 ref cultureInfo en-US
 

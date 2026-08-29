@@ -39,3 +39,6 @@ table languages
 				    languages_Table
 
 	annotation PBI_Id = ae47b3e939f85aecaeff201e80f1086c
+
+	annotation PBI_ResultType = Table
+

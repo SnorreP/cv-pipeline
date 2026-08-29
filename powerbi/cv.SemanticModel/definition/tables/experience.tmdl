@@ -25,7 +25,7 @@ table experience
 			            )
 			    )
 			RETURN
-			    COUNTROWS ( CoveredList )
+			    IF ( ISBLANK ( FirstStart ), BLANK (), COUNTROWS ( CoveredList ) )
 		formatString: 0
 		isHidden
 		lineageTag: 9b43cf83-6983-419b-9d93-5e3182eeeac3
@@ -38,7 +38,7 @@ table experience
 			VAR s =
 			    CALCULATE ( MIN ( experience[start_date] ), experience[is_current] = TRUE () )
 			RETURN
-			    DATEDIFF ( s, TODAY (), MONTH ) / 12
+			    IF ( ISBLANK ( s ), BLANK (), DATEDIFF ( s, TODAY (), MONTH ) / 12 )
 		formatString: 0.0
 		lineageTag: 3f321f9a-67ed-44c2-959c-c64591388129
 
@@ -66,7 +66,7 @@ table experience
 	measure 'Timeline Start' =
 			VAR s = MIN ( experience[start_date] )
 			RETURN
-			    YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12
+			    IF ( ISBLANK ( s ), BLANK (), YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12 )
 		formatString: 0
 		lineageTag: 52c2fb35-273d-4886-a79f-c6a437da9d27
 
@@ -74,7 +74,11 @@ table experience
 			VAR s = MIN ( experience[start_date] )
 			VAR e = COALESCE ( MIN ( experience[end_date] ), TODAY () )
 			RETURN
-			    ( YEAR ( e ) + ( MONTH ( e ) - 1 ) / 12 ) - ( YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12 ) + 1 / 12
+			    IF (
+			        ISBLANK ( s ),
+			        BLANK (),
+			        ( YEAR ( e ) + ( MONTH ( e ) - 1 ) / 12 ) - ( YEAR ( s ) + ( MONTH ( s ) - 1 ) / 12 ) + 1 / 12
+			    )
 		formatString: 0
 		lineageTag: 414cd7da-9a37-42da-b544-d69cf697dd29
 
@@ -85,7 +89,11 @@ table experience
 			VAR s = SELECTEDVALUE ( experience[start_date] )
 			VAR e = SELECTEDVALUE ( experience[end_date] )
 			RETURN
-			    FORMAT ( s, "MMM yyyy" ) & " – " & IF ( ISBLANK ( e ), "today", FORMAT ( e, "MMM yyyy" ) )
+			    IF (
+			        ISBLANK ( s ),
+			        BLANK (),
+			        FORMAT ( s, "MMM yyyy" ) & " – " & IF ( ISBLANK ( e ), "today", FORMAT ( e, "MMM yyyy" ) )
+			    )
 		lineageTag: 9cf1dc5d-b74c-4f5c-9b80-f6a0f6ac0d22
 
 	column company
@@ -210,7 +218,6 @@ table experience
 
 		annotation SummarizationSetBy = Automatic
 
-
 	partition experience = m
 		mode: import
 		source =
@@ -221,4 +228,6 @@ table experience
 				    experience_Table = cv_Schema{[Name="experience",Kind="Table"]}[Data]
 				in
 				    experience_Table
+
+	annotation PBI_ResultType = Table
 

@@ -22,20 +22,6 @@
                       "Entity": "experience"
                     }
                   },
-                  "Property": "Years of Experience"
-                }
-              },
-              "queryRef": "experience.Years of Experience",
-              "nativeQueryRef": "Years of Experience"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "experience"
-                    }
-                  },
                   "Property": "Current Tenure"
                 }
               },
@@ -72,6 +58,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "experience"
+                  }
+                },
+                "Property": "Current Tenure"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -106,24 +110,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#2A78D6'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "experience.Years of Experience"
           }
         }
       ],
@@ -221,20 +207,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "80f63304704bf95b38ce",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "Years of Experience"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "8ac933cefeda66aaed93",
         "field": {

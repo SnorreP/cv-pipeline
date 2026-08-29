@@ -51,7 +51,6 @@ table projects
 
 		annotation SummarizationSetBy = Automatic
 
-
 	partition projects = m
 		mode: import
 		source =
@@ -62,4 +61,6 @@ table projects
 				    projects_Table = cv_Schema{[Name="projects",Kind="Table"]}[Data]
 				in
 				    projects_Table
+
+	annotation PBI_ResultType = Table
 

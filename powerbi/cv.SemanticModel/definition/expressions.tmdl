@@ -1,0 +1,29 @@
+/// The Databricks workspace this report reads from.
+///
+/// All three values change every time the workspace is torn down and
+/// re-created, which is the normal cycle for this project. They live here
+/// so a rebuild is three edits in one dialog (Transform data -> Manage
+/// parameters) instead of a find-and-replace across every table query.
+///
+/// Host and HttpPath come straight from `terraform output`
+/// (powerbi_server_hostname and powerbi_http_path).
+expression Host = "adb-7405609537088159.19.azuredatabricks.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 8c41f0a2-7b3d-4e19-9a52-3f6d8b2c1e40
+
+	annotation PBI_ResultType = Text
+
+expression HttpPath = "sql/protocolv1/o/7405609537088159/0829-184736-8z6l21hc" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2d95b6e1-4c78-4a03-8f61-7e0a9d43b512
+
+	annotation PBI_ResultType = Text
+
+/// NOT a Terraform output. A new workspace auto-creates a default catalog
+/// named after itself, but the name is claimed in the regional metastore,
+/// which outlives every workspace -- so the first workspace took
+/// `dbw_cv_pipeline` and every rebuild since gets
+/// `dbw_cv_pipeline_<workspace id>`. Read the current one from the
+/// workspace's Catalog explorer.
+expression Catalog = "dbw_cv_pipeline_7405609537088159" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 6a08c3f5-9e21-4b7c-8d34-1f52e7a09c68
+
+	annotation PBI_ResultType = Text

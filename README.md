@@ -35,6 +35,7 @@ building or refreshing the report.
 | `terraform/` | Defines the workspace, cluster, Git folder and refresh job. |
 | `powerbi/cv.pbip` | The report as a Power BI Project -- plain text, so it diffs in git. |
 | `powerbi/cv-theme.json` | The report theme: palette, type scale, quiet gridlines. Import via *View -> Themes -> Browse*. |
+| `powerbi/cv.SemanticModel/definition/expressions.tmdl` | The `Host`, `HttpPath` and `Catalog` parameters -- the only place the Databricks connection is written down. |
 | `Dockerfile`, `compose.yaml`, `deploy.cmd` | The containerized deploy toolchain (pinned Terraform + Azure CLI). |
 
 ## Prerequisites
@@ -263,6 +264,76 @@ Your own tenant outlives the Azure trial and stays under your control.
 The published report keeps working -- Import mode means the data travels
 with it.
 
+## Reconnecting Power BI after a rebuild
+
+Every `terraform destroy` + `apply` produces a workspace that looks
+identical and is addressed completely differently. **Four** things change,
+and Power BI reports each failure in a way that points at the wrong
+culprit. Do them in this order.
+
+**1. Run the job first.** A fresh workspace has an empty `cv` schema.
+Refreshing before the job has run gives you "table not found", which is
+easy to misread as a broken connection.
+
+**2. Collect the new coordinates.**
+
+```
+.\deploy.cmd terraform output
+```
+
+That gives `powerbi_server_hostname` and `powerbi_http_path`. The third
+value -- the catalog -- is not a Terraform output; get it from the
+workspace's **Catalog** explorer, or:
+
+```
+.\deploy.cmd bash -c 'TOKEN=$(az account get-access-token --resource 2ff814a6-3304-4ab8-85cb-cd0e6f879c1d --query accessToken -o tsv); curl -sf -H "Authorization: Bearer $TOKEN" "https://<hostname>/api/2.1/unity-catalog/catalogs"'
+```
+
+**Expect the catalog name to have changed, and to keep changing.** A new
+workspace auto-creates a default catalog named after itself -- but the
+name is claimed in the *metastore*, which is regional, account-level, and
+outlives every workspace (Terraform never created it, so `destroy` never
+removes it). The first workspace took `dbw_cv_pipeline`; every one since
+falls back to `dbw_cv_pipeline_<workspace id>`, with a fresh id each time.
+The give-away error is:
+
+```
+PERMISSION_DENIED: Catalog 'dbw_cv_pipeline' is not accessible in current workspace
+```
+
+That is not a credentials problem. The catalog still exists -- a direct
+API call returns **403, not 404** -- but it is bound to a workspace that
+no longer exists. Deleting the orphan needs metastore-admin rights in the
+account console (accounts.azuredatabricks.net); for a few kilobytes it is
+not worth the trip.
+
+**3. Repoint the model -- three edits, one dialog.** The connection is not
+hardcoded in the queries: all ten tables read it from three Power Query
+parameters, `Host`, `HttpPath` and `Catalog`, defined in
+`powerbi/cv.SemanticModel/definition/expressions.tmdl`.
+
+In Power BI Desktop: *Transform data -> Manage parameters*, paste the three
+new values, close and apply.
+
+Or edit `expressions.tmdl` directly -- it is three string literals, and the
+file exists precisely so a rebuild never means touching a table query.
+Confirm nothing stale is left anywhere:
+
+```
+grep -rn "<old workspace id>" powerbi/
+```
+
+**4. New access token.** The old PAT died with the old workspace. Generate
+one in the new workspace (avatar -> **Settings** -> **Developer** ->
+**Access tokens**, scope **BI Tools**), then in Desktop go to *File ->
+Options and settings -> Data source settings* and **Clear permissions**
+for both the old and the new hostname -- the stale entry is what makes
+Desktop silently retry a dead token. Refresh, and paste the new token when
+prompted.
+
+The cluster must be running for the refresh, and Power BI must be pointed
+at the *new* hostname before it will even ask for credentials.
+
 ## Updating the CV later
 
 1. Edit the CSVs, commit, push.
@@ -271,11 +342,10 @@ with it.
    `az login --use-device-code`, then `terraform apply`.
 3. In the workspace, open the Git folder and **pull** so the checkout picks
    up the new commit (the clone does not update itself).
-4. Run **refresh-cv-tables**. If the workspace was recreated, update the
-   connection in Power BI Desktop (*Transform data -> Data source settings*)
-   with the new `powerbi_server_hostname` and `powerbi_http_path` from
-   `terraform output` -- a rebuilt workspace gets a new hostname and HTTP
-   path -- and generate a fresh Personal Access Token in the new workspace
-   (the old token died with the old one; see "Build and publish the
-   report"). Then **Refresh**, republish, and
-   `.\deploy.cmd terraform destroy` again. About 30 minutes end to end.
+4. Run **refresh-cv-tables**.
+5. If the workspace was recreated, follow **Reconnecting Power BI after a
+   rebuild** above -- hostname, HTTP path, catalog name and access token
+   have all changed. If the workspace survived, just hit **Refresh** in
+   Power BI Desktop.
+6. Republish, then `.\deploy.cmd terraform destroy` again. About 30
+   minutes end to end.

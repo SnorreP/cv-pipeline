@@ -45,9 +45,9 @@ table testimonials
 		mode: import
 		source =
 				let
-				    Source = Databricks.Catalogs("adb-7405607530837883.3.azuredatabricks.net", "sql/protocolv1/o/7405607530837883/0829-134628-5wvswf0g", [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
-				    dbw_cv_pipeline_Database = Source{[Name="dbw_cv_pipeline",Kind="Database"]}[Data],
-				    cv_Schema = dbw_cv_pipeline_Database{[Name="cv",Kind="Schema"]}[Data],
+				    Source = Databricks.Catalogs(Host, HttpPath, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0", Protocol=null]),
+				    Catalog_Database = Source{[Name=Catalog,Kind="Database"]}[Data],
+				    cv_Schema = Catalog_Database{[Name="cv",Kind="Schema"]}[Data],
 				    testimonials_Table = cv_Schema{[Name="testimonials",Kind="Table"]}[Data]
 				in
 				    testimonials_Table

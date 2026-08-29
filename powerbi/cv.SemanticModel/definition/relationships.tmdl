@@ -18,10 +18,6 @@ relationship 118dd0c8-ef0e-453f-95dd-5931ea73b5b0
 	fromColumn: experience.end_date
 	toColumn: LocalDateTable_2fccfa77-4f07-4121-887b-faf520895119.Date
 
-relationship AutoDetected_cdd0ba1e-3541-4837-a9a3-c93dfb720459
-	fromColumn: project_technologies.project
-	toColumn: projects.project
-
 
 relationship 3831a964-6d86-5edf-9a92-26c43c67039b
 	fromColumn: experience.language

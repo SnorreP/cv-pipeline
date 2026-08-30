@@ -165,23 +165,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ef64a2e1b80726f2fc51",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "labels"
-              }
-            },
-            "Property": "lbl_sec_language"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

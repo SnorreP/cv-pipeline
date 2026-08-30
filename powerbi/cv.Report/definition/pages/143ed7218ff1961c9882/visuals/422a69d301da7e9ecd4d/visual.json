@@ -4,9 +4,10 @@
   "position": {
     "x": 38.834027364663896,
     "y": 465.24687685901245,
-    "z": 25,
+    "z": 25000,
     "height": 189.60142772159429,
-    "width": 579.46460440214162
+    "width": 579.46460440214162,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -248,51 +249,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "94f645a75219005b3170",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "project_technologies"
-              }
-            },
-            "Property": "technology"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "895576d18d9bc4ff3aca",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "project_technologies"
-              }
-            },
-            "Property": "project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "026c16afcecf244b24b4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "project_technologies"
-              }
-            },
-            "Property": "Tech Used"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -165,23 +165,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1a708903cf383a307ae2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "profile"
-              }
-            },
-            "Property": "Profile Headline"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

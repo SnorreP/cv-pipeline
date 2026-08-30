@@ -6,7 +6,8 @@
     "y": 28,
     "z": 0,
     "height": 40,
-    "width": 600
+    "width": 600,
+    "tabOrder": 33000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -165,23 +166,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bdea1c8207a56ea2904f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "labels"
-              }
-            },
-            "Property": "lbl_p2_title"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

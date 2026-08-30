@@ -4,9 +4,10 @@
   "position": {
     "x": 38.834027364663889,
     "y": 347.22189173111241,
-    "z": 23,
+    "z": 23000,
     "height": 118.02498512790007,
-    "width": 580.22605591909576
+    "width": 580.22605591909576,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -270,65 +271,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "326b7eaa321f892e50ff",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "projects"
-              }
-            },
-            "Property": "year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1f4d1dfb296b833df98a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "projects"
-              }
-            },
-            "Property": "project"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1befc394d338c44ce137",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "projects"
-              }
-            },
-            "Property": "description"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8e6a22eb1af1086779b4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "projects"
-              }
-            },
-            "Property": "url"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -256,51 +256,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5894f545e98397d767ba",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "Period"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b3ff30c4904383f0f8f8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "company"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e5dac68ce952dc47b69c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "role"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

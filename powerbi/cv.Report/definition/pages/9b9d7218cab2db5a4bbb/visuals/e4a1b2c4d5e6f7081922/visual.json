@@ -4,8 +4,8 @@
   "position": {
     "x": 40.356930398572281,
     "y": 125.639500297442,
-    "z": 25000,
-    "height": 92.135633551457474,
+    "z": 24250,
+    "height": 86.04402141582392,
     "width": 1199.2861392028556
   },
   "visual": {
@@ -176,7 +176,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "7c8d758be2f9dd3c7334",
+        "name": "cbb528158693bc1c858b",
         "field": {
           "Measure": {
             "Expression": {

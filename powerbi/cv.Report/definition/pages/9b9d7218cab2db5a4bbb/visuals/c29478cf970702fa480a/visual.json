@@ -183,23 +183,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ff63933b513a124fa88a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Meta"
-              }
-            },
-            "Property": "Pipeline Footer"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

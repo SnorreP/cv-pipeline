@@ -4,9 +4,10 @@
   "position": {
     "x": 660.9399167162403,
     "y": 347.22189173111246,
-    "z": 27,
-    "height": 170,
-    "width": 580
+    "z": 27000,
+    "height": 307.62641284949439,
+    "width": 580.22605591909576,
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "tableEx",
@@ -286,79 +287,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6cf3a642d2d22adc8f67",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "start_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "945b28a3a88da75b8d4a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "company"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "68d75936c7ded18799a0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "role"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "946fc235b700c732243f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "location"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "971a3c713003165f9c30",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "experience"
-              }
-            },
-            "Property": "summary"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

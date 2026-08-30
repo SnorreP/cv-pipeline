@@ -4,9 +4,10 @@
   "position": {
     "x": 980,
     "y": 160,
-    "z": 21,
+    "z": 21000,
     "height": 56,
-    "width": 244
+    "width": 244,
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -173,23 +174,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "337beddddd2e15de67cd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "labels"
-              }
-            },
-            "Property": "lbl_node4_desc"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

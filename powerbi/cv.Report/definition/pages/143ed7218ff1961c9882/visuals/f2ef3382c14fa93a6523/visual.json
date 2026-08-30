@@ -4,9 +4,10 @@
   "position": {
     "x": 38.834027364663889,
     "y": 343.41463414634143,
-    "z": 22,
+    "z": 22000,
     "height": 18,
-    "width": 300
+    "width": 300,
+    "tabOrder": 32000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -165,23 +166,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6b4eb2249d4208a73a09",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "labels"
-              }
-            },
-            "Property": "lbl_sec_projects"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

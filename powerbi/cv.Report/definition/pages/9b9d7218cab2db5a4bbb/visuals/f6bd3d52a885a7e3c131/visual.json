@@ -190,23 +190,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bbfdaaf0e375074a3cd7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "education"
-              }
-            },
-            "Property": "Education Line"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

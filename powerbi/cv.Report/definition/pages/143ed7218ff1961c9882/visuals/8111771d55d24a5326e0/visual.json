@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "8111771d55d24a5326e0",
   "position": {
-    "x": 40.356930398572281,
-    "y": 370.06543723973829,
+    "x": 38.834027364663889,
+    "y": 347.22189173111241,
     "z": 23,
     "height": 118.02498512790007,
     "width": 580.22605591909576
@@ -83,7 +83,7 @@
                     "Entity": "projects"
                   }
                 },
-                "Property": "description"
+                "Property": "year"
               }
             },
             "direction": "Descending"
@@ -261,7 +261,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

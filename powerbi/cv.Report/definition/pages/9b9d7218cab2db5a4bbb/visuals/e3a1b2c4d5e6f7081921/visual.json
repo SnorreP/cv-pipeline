@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "83b46be57db0e0b49378",
+  "name": "e3a1b2c4d5e6f7081921",
   "position": {
-    "x": 820,
-    "y": 346,
-    "z": 13,
-    "width": 420,
-    "height": 18
+    "x": 40,
+    "y": 102,
+    "z": 61,
+    "width": 1200,
+    "height": 20
   },
   "visual": {
     "visualType": "cardVisual",
@@ -19,14 +19,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "labels"
+                      "Entity": "profile"
                     }
                   },
-                  "Property": "lbl_sec_skills"
+                  "Property": "Profile Headline"
                 }
               },
-              "queryRef": "labels.lbl_sec_skills",
-              "nativeQueryRef": "lbl_sec_skills"
+              "queryRef": "profile.Profile Headline",
+              "nativeQueryRef": "Profile Headline"
             }
           ]
         }
@@ -39,7 +39,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "11D"
                 }
               }
             },
@@ -48,7 +48,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#52514E'"
+                      "Value": "'#0B0B0B'"
                     }
                   }
                 }
@@ -57,7 +57,7 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Segoe UI'"
+                  "Value": "'Segoe UI Semibold'"
                 }
               }
             },

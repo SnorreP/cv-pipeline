@@ -1,2 +1,2 @@
 project,description,tech_stack,url,year
-CV pipeline,This very report - my CV flowing from git through Terraform and Databricks into Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026
+CV pipeline,This very report — my CV flowing from git through Terraform and Databricks into Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026

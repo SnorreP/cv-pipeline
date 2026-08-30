@@ -8,7 +8,6 @@ sec_experience,ERHVERVSERFARING
 sec_skills,"KOMPETENCER — SELVVURDERET, 1–5"
 sec_education,UDDANNELSE
 note_overlap,Totalen tæller faktisk arbejdede måneder — pausen mellem DUOS og IThelpers i starten af 2021 tælles ikke med.
-note_footnote,overlapsjusteret — samtidige roller tælles én gang
 cap_skills,Terraform og Databricks er de nyeste — dette CV er øvebanen.
 stat_years,ÅR PÅ ARBEJDSMARKEDET
 stat_tenure,I NUVÆRENDE ROLLE
@@ -35,3 +34,7 @@ why1,"Det er versionsstyret og reproducerbart — et git-repo, ikke en Word-fil.
 why2,Selvvurderingerne har råd til at være ærlige: artefaktet beviser arbejdet.
 why3,Samme omhu for et datasæt på 20 rækker som på 20 millioner.
 sec_language,SPROG
+footer_main,Versionsstyret CV  ·  git → Terraform → Azure Databricks → Power BI
+refreshed_prefix,data flød senest
+since_prefix,siden
+at_prefix,hos

@@ -1,2 +1,2 @@
 project,description,tech_stack,url,year
-CV pipeline,Denne rapport - mit CV der flyder fra git gennem Terraform og Databricks til Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026
+CV pipeline,Denne rapport — mit CV der flyder fra git gennem Terraform og Databricks til Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026

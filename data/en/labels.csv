@@ -8,9 +8,8 @@ sec_experience,EXPERIENCE
 sec_skills,"SKILLS — SELF-RATED, 1–5"
 sec_education,EDUCATION
 note_overlap,The total counts distinct months actually worked — the gap between DUOS and IThelpers in early 2021 is not counted.
-note_footnote,overlap-adjusted — concurrent roles counted once
-cap_skills,Terraform & Databricks are the newest — this CV is the practice.
-stat_years,YEARS IN WORK
+cap_skills,Terraform & Databricks are the newest — this CV is the practice ground.
+stat_years,YEARS IN THE WORKFORCE
 stat_tenure,IN CURRENT ROLE
 stat_sql,OF SQL
 stat_pbi,OF POWER BI
@@ -35,3 +34,7 @@ why1,"It's version-controlled and reproducible — a git repo, not a Word file."
 why2,The self-ratings can afford to be honest: the artifact proves the work.
 why3,Same care for a 20-row dataset as for a 20-million-row one.
 sec_language,LANGUAGE
+footer_main,Version-controlled CV  ·  git → Terraform → Azure Databricks → Power BI
+refreshed_prefix,data last flowed
+since_prefix,since
+at_prefix,at

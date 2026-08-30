@@ -1,10 +1,19 @@
 table Meta
 	lineageTag: 3235cb70-891e-4a41-8338-e61dea698411
 
-	measure 'Last Pipeline Run' = "data last flowed " & FORMAT ( MAX ( Meta[RefreshedAt] ), "d MMM yyyy" )
+	measure 'Last Pipeline Run' =
+			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
+			VAR Prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "refreshed_prefix" )
+			VAR Fmt = IF ( Lang = "da", "d. MMM yyyy", "d MMM yyyy" )
+			VAR Loc = IF ( Lang = "da", "da-DK", "en-US" )
+			RETURN
+			    Prefix & " " & FORMAT ( MAX ( Meta[RefreshedAt] ), Fmt, Loc )
 		lineageTag: 1ed9d923-f882-43b6-9e12-18a962819cb0
 
-	measure 'Pipeline Footer' = "Version-controlled CV  ·  git → Terraform → Azure Databricks → Power BI  ·  " & [Last Pipeline Run]
+	measure 'Pipeline Footer' =
+			VAR Main = CALCULATE ( MAX ( labels[text] ), labels[key] = "footer_main" )
+			RETURN
+			    Main & "  ·  " & [Last Pipeline Run]
 		lineageTag: 872fce1b-c911-4e84-ae47-19d5f2d8b844
 
 	column RefreshedAt

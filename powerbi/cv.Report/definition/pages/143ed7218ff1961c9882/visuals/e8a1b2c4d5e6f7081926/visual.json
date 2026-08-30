@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "83b46be57db0e0b49378",
+  "name": "e8a1b2c4d5e6f7081926",
   "position": {
-    "x": 820,
-    "y": 346,
-    "z": 13,
-    "width": 420,
-    "height": 18
+    "x": 260,
+    "y": 286,
+    "z": 35,
+    "width": 980,
+    "height": 30
   },
   "visual": {
     "visualType": "cardVisual",
@@ -19,14 +19,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "labels"
+                      "Entity": "testimonials"
                     }
                   },
-                  "Property": "lbl_sec_skills"
+                  "Property": "Testimonial Quote"
                 }
               },
-              "queryRef": "labels.lbl_sec_skills",
-              "nativeQueryRef": "lbl_sec_skills"
+              "queryRef": "testimonials.Testimonial Quote",
+              "nativeQueryRef": "Testimonial Quote"
             }
           ]
         }
@@ -39,7 +39,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "10D"
                 }
               }
             },

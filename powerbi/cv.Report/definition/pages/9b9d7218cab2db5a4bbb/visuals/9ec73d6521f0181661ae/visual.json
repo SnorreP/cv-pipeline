@@ -3,9 +3,9 @@
   "name": "9ec73d6521f0181661ae",
   "position": {
     "x": 40,
-    "y": 338,
+    "y": 368,
     "z": 10,
-    "height": 200,
+    "height": 132,
     "width": 740
   },
   "visual": {
@@ -180,8 +180,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#2A78D6'"
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "experience"
+                        }
+                      },
+                      "Property": "Timeline Bar Color"
                     }
                   }
                 }
@@ -206,7 +211,7 @@
             "start": {
               "expr": {
                 "Literal": {
-                  "Value": "2018D"
+                  "Value": "2014D"
                 }
               }
             },

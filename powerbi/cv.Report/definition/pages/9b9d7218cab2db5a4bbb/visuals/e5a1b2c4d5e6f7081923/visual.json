@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "83b46be57db0e0b49378",
+  "name": "e5a1b2c4d5e6f7081923",
   "position": {
-    "x": 820,
-    "y": 346,
-    "z": 13,
-    "width": 420,
-    "height": 18
+    "x": 40,
+    "y": 318,
+    "z": 63,
+    "width": 280,
+    "height": 16
   },
   "visual": {
     "visualType": "cardVisual",
@@ -19,14 +19,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "labels"
+                      "Entity": "experience"
                     }
                   },
-                  "Property": "lbl_sec_skills"
+                  "Property": "Career Since"
                 }
               },
-              "queryRef": "labels.lbl_sec_skills",
-              "nativeQueryRef": "lbl_sec_skills"
+              "queryRef": "experience.Career Since",
+              "nativeQueryRef": "Career Since"
             }
           ]
         }

@@ -29,9 +29,6 @@ table labels
 	measure lbl_note_overlap = CALCULATE ( MAX ( labels[text] ), labels[key] = "note_overlap" )
 		lineageTag: 97519808-b171-59a4-b6fe-84728d42bbc1
 
-	measure lbl_note_footnote = CALCULATE ( MAX ( labels[text] ), labels[key] = "note_footnote" )
-		lineageTag: c1ec6c30-012e-5a2b-b02c-5328981301d5
-
 	measure lbl_cap_skills = CALCULATE ( MAX ( labels[text] ), labels[key] = "cap_skills" )
 		lineageTag: 7ce33af9-8398-51d0-8fac-a62ef35938d5
 
@@ -109,6 +106,18 @@ table labels
 
 	measure lbl_sec_language = CALCULATE ( MAX ( labels[text] ), labels[key] = "sec_language" )
 		lineageTag: e0cec431-1f13-5800-84fa-45779ff42ce2
+
+	measure lbl_footer_main = CALCULATE ( MAX ( labels[text] ), labels[key] = "footer_main" )
+		lineageTag: 4b7f2a91-3c58-4e06-9d21-a85f60c13e77
+
+	measure lbl_refreshed_prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "refreshed_prefix" )
+		lineageTag: 7d90c4e2-51ab-4f38-b6c0-2e94d7a1855f
+
+	measure lbl_since_prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "since_prefix" )
+		lineageTag: 1fa8b356-9e72-4c04-8d5b-c67e30f2a941
+
+	measure lbl_at_prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "at_prefix" )
+		lineageTag: 9c25d8f0-6b41-4a97-8e63-5fd2b40c17a8
 
 	column key
 		dataType: string

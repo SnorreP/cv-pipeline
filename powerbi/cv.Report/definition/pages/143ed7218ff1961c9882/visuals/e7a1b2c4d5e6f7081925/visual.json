@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "83b46be57db0e0b49378",
+  "name": "e7a1b2c4d5e6f7081925",
   "position": {
-    "x": 820,
-    "y": 346,
-    "z": 13,
-    "width": 420,
-    "height": 18
+    "x": 260,
+    "y": 246,
+    "z": 34,
+    "width": 980,
+    "height": 34
   },
   "visual": {
     "visualType": "cardVisual",
@@ -19,14 +19,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "labels"
+                      "Entity": "profile"
                     }
                   },
-                  "Property": "lbl_sec_skills"
+                  "Property": "Profile Personal"
                 }
               },
-              "queryRef": "labels.lbl_sec_skills",
-              "nativeQueryRef": "lbl_sec_skills"
+              "queryRef": "profile.Profile Personal",
+              "nativeQueryRef": "Profile Personal"
             }
           ]
         }
@@ -39,7 +39,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "10D"
                 }
               }
             },
@@ -48,7 +48,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#52514E'"
+                      "Value": "'#0B0B0B'"
                     }
                   }
                 }

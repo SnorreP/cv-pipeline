@@ -44,23 +44,16 @@ table experience
 
 	measure 'Career Since' =
 			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
+			VAR Prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "since_prefix" )
+			VAR FirstStart = MINX ( FILTER ( ALL ( experience ), experience[language] = Lang ), experience[start_date] )
 			RETURN
-			    "since " & FORMAT ( MINX ( FILTER ( ALL ( experience ), experience[language] = Lang ), experience[start_date] ), "MMM yyyy" )
+			    Prefix & " " & FORMAT ( FirstStart, "MMM yyyy", IF ( Lang = "da", "da-DK", "en-US" ) )
 		lineageTag: a328ccc6-35fe-46e5-8ec0-2b4ae441dc53
 
-	measure 'Overlap Note' =
-			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
-			VAR RawMonths =
-			    SUMX (
-			        FILTER ( ALL ( experience ), experience[language] = Lang ),
-			        DATEDIFF ( experience[start_date], COALESCE ( experience[end_date], TODAY () ), MONTH ) + 1
-			    )
-			VAR Dupes = RawMonths - [Covered Months]
+	measure 'Current Role Note' =
+			VAR Prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "at_prefix" )
 			RETURN
-			    IF ( Dupes > 0, FORMAT ( Dupes, "0" ) & " overlapping months counted once", BLANK () )
-		lineageTag: 465ea01f-6e84-46d4-8c20-7a0f761a4b5f
-
-	measure 'Current Role Note' = "at " & CALCULATE ( MAX ( experience[company] ), experience[is_current] = TRUE () )
+			    Prefix & " " & CALCULATE ( MAX ( experience[company] ), experience[is_current] = TRUE () )
 		lineageTag: 71a36fa0-a131-4e8d-8a1e-adbbc4a659e0
 
 	measure 'Timeline Start' =

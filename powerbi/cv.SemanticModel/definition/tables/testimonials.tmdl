@@ -1,6 +1,12 @@
 table testimonials
 	lineageTag: 1b1a4292-0466-5367-8021-bf3b15ac62c9
 
+	measure 'Testimonial Quote' = "“" & MAX ( testimonials[quote] ) & "”"
+		lineageTag: 6f28c5a1-9d04-4b76-8e12-c93a507f4be8
+
+	measure 'Testimonial Attribution' = "— " & MAX ( testimonials[name] ) & " · " & MAX ( testimonials[relation] ) & ", " & MAX ( testimonials[period] ) & "  ·  " & MAX ( profile[references_note] )
+		lineageTag: 3d95e0b7-1a62-4c48-9f30-85d2c6b174ea
+
 	column name
 		dataType: string
 		lineageTag: b647d1b7-ac25-57af-96fc-52e029a586a9

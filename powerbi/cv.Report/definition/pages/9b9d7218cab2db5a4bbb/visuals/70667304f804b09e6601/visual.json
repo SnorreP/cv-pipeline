@@ -3,10 +3,10 @@
   "name": "70667304f804b09e6601",
   "position": {
     "x": 40,
-    "y": 82,
+    "y": 72,
     "z": 1,
-    "height": 24,
-    "width": 700
+    "height": 22,
+    "width": 690
   },
   "visual": {
     "visualType": "cardVisual",

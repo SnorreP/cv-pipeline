@@ -1,6 +1,15 @@
 table profile
 	lineageTag: e20199d2-dbcf-5ac8-831d-b8d7d5e0f4ef
 
+	measure 'Profile Headline' = MAX ( profile[headline] )
+		lineageTag: 2e61a7c4-8f95-4b32-a1d8-70c4e5962fb3
+
+	measure 'Profile Summary' = MAX ( profile[summary] )
+		lineageTag: 5a83d1f6-2c07-49e8-b5a4-91e6f3082dc5
+
+	measure 'Profile Personal' = MAX ( profile[personal] )
+		lineageTag: 8c40b9e2-6d13-4f57-a2c9-3b785e1064da
+
 	column headline
 		dataType: string
 		lineageTag: 27eafc07-1044-56b1-9aa2-402cbcf4b50e

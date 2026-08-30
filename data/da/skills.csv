@@ -1,12 +1,12 @@
 skill,category,proficiency,years_experience,sort_order
-Power BI,Analyse,4,4,1
-SQL,Data,4,4,2
+Power BI,Data & BI,4,4,1
+SQL,Data & BI,4,4,2
 Applikationssupport,Support,4,5,3
 Fejlsøgning,Support,4,5,4
-Azure,Cloud,3,4,5
+Azure,Cloud & infrastruktur,3,4,5
 Git,Værktøjer,3,3,6
-PowerShell,Scripting,3,4,7
+PowerShell,Værktøjer,3,4,7
 AI-kodning,Værktøjer,3,1,8
-Databricks,Dataplatform,2,1,9
-Terraform,Infrastruktur,2,1,10
-Google Cloud Platform,Cloud,1,1,11
+Databricks,Data & BI,2,1,9
+Terraform,Cloud & infrastruktur,2,1,10
+Google Cloud Platform,Cloud & infrastruktur,1,1,11

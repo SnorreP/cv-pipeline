@@ -3,9 +3,9 @@
   "name": "2f2a44feb19c2705b597",
   "position": {
     "x": 40,
-    "y": 560,
+    "y": 530,
     "z": 12,
-    "height": 108,
+    "height": 124,
     "width": 740
   },
   "visual": {
@@ -50,11 +50,11 @@
                       "Entity": "experience"
                     }
                   },
-                  "Property": "summary"
+                  "Property": "role"
                 }
               },
-              "queryRef": "experience.summary",
-              "nativeQueryRef": "summary"
+              "queryRef": "experience.role",
+              "nativeQueryRef": "role"
             }
           ]
         }
@@ -109,7 +109,7 @@
             "rowPadding": {
               "expr": {
                 "Literal": {
-                  "Value": "6D"
+                  "Value": "3D"
                 }
               }
             }

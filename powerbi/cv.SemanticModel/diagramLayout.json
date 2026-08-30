@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 385,
-            "y": 25.5
+            "y": 64.1938628463148
           },
           "nodeIndex": "cv_summary",
           "nodeLineageTag": "97018d91-fb31-4995-8cf2-4a9a4619e0c2",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 717,
-            "y": 388.5
+            "y": 427.1938628463148
           },
           "nodeIndex": "education",
           "nodeLineageTag": "450d71d5-52b3-4745-a455-59972bbe92e8",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1001,
-            "y": 19.5
+            "y": 58.1938628463148
           },
           "nodeIndex": "experience",
           "nodeLineageTag": "bab9f28d-ad2c-4359-bed8-dbf5dd9a885f",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 335,
-            "y": 384.5
+            "y": 423.1938628463148
           },
           "nodeIndex": "project_technologies",
           "nodeLineageTag": "96db8423-2335-45ab-b56c-60cc0425431d",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 50,
-            "y": 29.5
+            "y": 68.1938628463148
           },
           "nodeIndex": "projects",
           "nodeLineageTag": "1d8d2040-15cf-40d5-b990-ce65e93e9a18",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1219,
-            "y": 413.5
+            "y": 452.1938628463148
           },
           "nodeIndex": "skills",
           "nodeLineageTag": "583063c9-f4fd-44ef-b867-714129d5cf6c",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 1453,
-            "y": 167.5
+            "y": 206.1938628463148
           },
           "nodeIndex": "Meta",
           "nodeLineageTag": "3235cb70-891e-4a41-8338-e61dea698411",
@@ -98,10 +98,62 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2156.6036898173138,
+            "y": 297.3877256926296
+          },
+          "nodeIndex": "labels",
+          "nodeLineageTag": "82bd03a2-0c8e-5dc3-ba2c-0456ff2ec71a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1985.0692284737618,
+            "y": 92.451133552907322
+          },
+          "nodeIndex": "languages",
+          "nodeLineageTag": "ae47b3e9-39f8-5aec-aeff-201e80f1086c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1586.2013532454382,
+            "y": 684.89938673214533
+          },
+          "nodeIndex": "profile",
+          "nodeLineageTag": "e20199d2-dbcf-5ac8-831d-b8d7d5e0f4ef",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2270.5259236869415,
+            "y": -50
+          },
+          "nodeIndex": "testimonials",
+          "nodeLineageTag": "1b1a4292-0466-5367-8021-bf3b15ac62c9",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 70.95554390096882,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

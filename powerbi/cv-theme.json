@@ -70,6 +70,20 @@
         ]
       }
     },
+    "cardVisual": {
+      "*": {
+        "padding": [
+          {
+            "$id": "default",
+            "paddingIndividual": true,
+            "topMargin": 0,
+            "bottomMargin": 0,
+            "leftMargin": 16,
+            "rightMargin": 16
+          }
+        ]
+      }
+    },
     "page": {
       "*": {
         "background": [

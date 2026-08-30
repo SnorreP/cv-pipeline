@@ -5,8 +5,8 @@
     "x": 260,
     "y": 286,
     "z": 35,
-    "width": 980,
-    "height": 30
+    "height": 32,
+    "width": 980
   },
   "visual": {
     "visualType": "cardVisual",

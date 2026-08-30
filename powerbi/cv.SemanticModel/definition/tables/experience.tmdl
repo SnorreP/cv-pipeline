@@ -3,8 +3,8 @@ table experience
 
 	measure 'Covered Months' =
 			VAR Lang = SELECTEDVALUE ( languages[code], "en" )
-			VAR Rows = FILTER ( ALL ( experience ), experience[language] = Lang )
-			VAR FirstStart = MINX ( Rows, experience[start_date] )
+			VAR CareerRows = FILTER ( ALL ( experience ), experience[language] = Lang )
+			VAR FirstStart = MINX ( CareerRows, experience[start_date] )
 			VAR MonthCount = DATEDIFF ( FirstStart, TODAY (), MONTH )
 			VAR AllMonths =
 			    SELECTCOLUMNS (
@@ -18,7 +18,7 @@ table experience
 			        RETURN
 			            NOT ISEMPTY (
 			                FILTER (
-			                    Rows,
+			                    CareerRows,
 			                    experience[start_date] <= EOMONTH ( ThisMonth, 0 )
 			                        && COALESCE ( experience[end_date], TODAY () ) >= ThisMonth
 			                )
@@ -36,7 +36,7 @@ table experience
 
 	measure 'Current Tenure' =
 			VAR s =
-			    CALCULATE ( MIN ( experience[start_date] ), experience[is_current] = TRUE () )
+			    CALCULATE ( MIN ( experience[start_date] ), ISBLANK ( experience[end_date] ) )
 			RETURN
 			    IF ( ISBLANK ( s ), BLANK (), DATEDIFF ( s, TODAY (), MONTH ) / 12 )
 		formatString: 0.0
@@ -53,7 +53,7 @@ table experience
 	measure 'Current Role Note' =
 			VAR Prefix = CALCULATE ( MAX ( labels[text] ), labels[key] = "at_prefix" )
 			RETURN
-			    Prefix & " " & CALCULATE ( MAX ( experience[company] ), experience[is_current] = TRUE () )
+			    Prefix & " " & CALCULATE ( MAX ( experience[company] ), ISBLANK ( experience[end_date] ) )
 		lineageTag: 71a36fa0-a131-4e8d-8a1e-adbbc4a659e0
 
 	measure 'Timeline Start' =
@@ -75,7 +75,7 @@ table experience
 		formatString: 0
 		lineageTag: 414cd7da-9a37-42da-b544-d69cf697dd29
 
-	measure 'Timeline Bar Color' = IF ( SELECTEDVALUE ( experience[is_current] ) = TRUE (), "#2A78D6", "#A8A6A0" )
+	measure 'Timeline Bar Color' = IF ( ISBLANK ( MIN ( experience[end_date] ) ), "#2A78D6", "#A8A6A0" )
 		lineageTag: 9c849997-4489-446c-84bf-73a76dc68edb
 
 	measure 'Dates Label' =
@@ -181,14 +181,14 @@ table experience
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Role Label' = experience[company] & "  —  " & experience[role] & IF ( experience[is_current], "  · current", "" )
+	column 'Role Label' = experience[company] & IF ( ISBLANK ( experience[end_date] ), "  ·  current", "" )
 		lineageTag: cba5f35c-21a6-4030-9549-72da1055c6a2
 		summarizeBy: none
 		sortByColumn: sort_order
 
 		annotation SummarizationSetBy = Automatic
 
-	column Period = FORMAT ( experience[start_date], "yyyy" ) & " – " & IF ( experience[is_current], "now", FORMAT ( experience[end_date], "yyyy" ) )
+	column Period = FORMAT ( experience[start_date], "yyyy" ) & " – " & IF ( ISBLANK ( experience[end_date] ), "now", FORMAT ( experience[end_date], "yyyy" ) )
 		lineageTag: 97a662b7-0ca9-4d16-a22a-b7c4a536f916
 		summarizeBy: none
 

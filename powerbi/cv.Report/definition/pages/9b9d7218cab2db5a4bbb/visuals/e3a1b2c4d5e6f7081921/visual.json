@@ -5,8 +5,8 @@
     "x": 40,
     "y": 102,
     "z": 61,
-    "width": 1200,
-    "height": 20
+    "height": 20,
+    "width": 1200
   },
   "visual": {
     "visualType": "cardVisual",
@@ -165,5 +165,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1a708903cf383a307ae2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "profile"
+              }
+            },
+            "Property": "Profile Headline"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,5 +1,5 @@
 key,text
-subtitle,Applikation-, Data- og BI-ingeniør
+subtitle,"Applikation-, Data- og BI Support Ingeniør"
 contact_location,"København, Danmark"
 strip_label,SÅDAN BLIVER SIDEN TIL
 strip_main,git push  →  Terraform  →  Azure Databricks  →  Power BI  →  
@@ -7,7 +7,6 @@ strip_accent,siden du læser
 sec_experience,ERHVERVSERFARING
 sec_skills,"KOMPETENCER — SELVVURDERET, 1–5"
 sec_education,UDDANNELSE
-note_overlap,Totalen tæller faktisk arbejdede måneder — pausen mellem DUOS og IThelpers i starten af 2021 tælles ikke med.
 stat_years,ÅR PÅ ARBEJDSMARKEDET
 stat_tenure,I NUVÆRENDE ROLLE
 stat_sql,MED SQL

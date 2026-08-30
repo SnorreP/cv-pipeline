@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "8111771d55d24a5326e0",
   "position": {
-    "x": 40,
-    "y": 370,
+    "x": 40.356930398572281,
+    "y": 370.06543723973829,
     "z": 23,
-    "height": 80,
-    "width": 580
+    "height": 118.02498512790007,
+    "width": 580.22605591909576
   },
   "visual": {
     "visualType": "tableEx",
@@ -83,7 +83,7 @@
                     "Entity": "projects"
                   }
                 },
-                "Property": "year"
+                "Property": "description"
               }
             },
             "direction": "Descending"

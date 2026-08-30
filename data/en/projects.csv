@@ -1,2 +1,4 @@
 project,description,tech_stack,url,year
 CV pipeline,This very report — my CV flowing from git through Terraform and Databricks into Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026
+Nordic reminder automation,"Automated email reminders for colleagues across the Nordics — SQL identifies the recipients work undone, Power Automate sends the mails on a schedule",SQL; Power Automate,,2024
+WPP Media merger support,"Supported the business through the merger that turned GroupM into WPP Media and consolidated the separate agencies under one banner — reworked view definitions, SSIS packages and the business logic baked into internal applications as table, view and tabular model structures changed underneath",SQL; SSIS; SSAS Tabular,,2025-2026

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2f2a44feb19c2705b597",
   "position": {
-    "x": 40,
-    "y": 530,
-    "z": 12,
-    "height": 124,
-    "width": 740
+    "x": 40.356930398572281,
+    "y": 558.14396192742413,
+    "z": 10000,
+    "height": 109.64901844140392,
+    "width": 740.13087447947657
   },
   "visual": {
     "visualType": "tableEx",
@@ -247,7 +247,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -256,5 +256,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5894f545e98397d767ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "Period"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b3ff30c4904383f0f8f8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e5dac68ce952dc47b69c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "experience"
+              }
+            },
+            "Property": "role"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

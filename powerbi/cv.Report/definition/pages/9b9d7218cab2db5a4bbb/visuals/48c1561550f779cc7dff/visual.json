@@ -4,7 +4,7 @@
   "position": {
     "x": 820,
     "y": 368,
-    "z": 14,
+    "z": 12000,
     "height": 190,
     "width": 420
   },
@@ -160,6 +160,17 @@
           "selector": {
             "metadata": "skills.Proficiency Level"
           }
+        },
+        {
+          "properties": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ],
       "valueAxis": [
@@ -275,7 +286,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

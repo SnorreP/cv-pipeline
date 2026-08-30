@@ -1,5 +1,5 @@
 key,text
-subtitle,Data, Applications, & BI Support Engineer  ·  Copenhagen
+subtitle,"Data, Applications, & BI Support Engineer  ·  Copenhagen"
 contact_location,"Copenhagen, Denmark"
 strip_label,HOW THIS PAGE EXISTS
 strip_main,git push  →  Terraform  →  Azure Databricks  →  Power BI  →  
@@ -7,7 +7,6 @@ strip_accent,the page you're reading
 sec_experience,EXPERIENCE
 sec_skills,"SKILLS — SELF-RATED, 1–5"
 sec_education,EDUCATION
-note_overlap,The total counts distinct months actually worked — the gap between DUOS and IThelpers in early 2021 is not counted.
 cap_skills,Terraform & Databricks are the newest — this CV is the practice ground.
 stat_years,YEARS IN THE WORKFORCE
 stat_tenure,IN CURRENT ROLE

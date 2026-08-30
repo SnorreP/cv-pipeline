@@ -1,4 +1,4 @@
 project,description,tech_stack,url,year
 CV pipeline,Denne rapport — mit CV der flyder fra git gennem Terraform og Databricks til Power BI,Terraform; Azure Databricks; PySpark; Power BI; GitHub,https://github.com/SnorreP/cv-pipeline,2026
 Nordisk påmindelsesautomatisering,"Automatiske mailpåmindelser til kolleger i hele Norden — SQL finder modtagere med udestående opgaver, Power Automate sender mailene efter en tidsplan",SQL; Power Automate,,2024
-Support under WPP Media-fusionen,"Support til forretningen gennem fusionen, hvor GroupM blev WPP Media og de separate agenturer blev samlet under ét brand — opdaterede view-definitioner, SSIS-pakker og forretningslogikken indbygget i interne applikationer i takt med at tabel-, view- og tabular model-strukturer ændrede sig",SQL; SSIS; SSAS Tabular,,2025-2026
+Support under WPP Media-fusionen,"Support til forretningen gennem fusionen, hvor GroupM blev WPP Media og de separate agenturer blev samlet under ét brand — opdaterede view-definitioner, SSIS-pakker og forretningslogikken indbygget i interne applikationer i takt med at tabel-, view- og tabular model-strukturer ændrede sig",SQL; SSIS; SSAS Tabular,,2026
